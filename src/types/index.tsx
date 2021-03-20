@@ -1,0 +1,7 @@
+export enum ComponentType {
+  MAIN = "MAIN",
+  PAIRING = "PAIRING",
+  VARIETIES = "VARIETIES",
+  DRINKING_GUIDE = "DRINKING_GUIDE",
+  INDICATION = "INDICATION",
+}
