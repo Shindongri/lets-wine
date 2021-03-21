@@ -11,7 +11,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
 
-import rootReducer, { RootState } from "src/features";
+import rootReducer from "src/features";
 
 const persistConfig = {
   key: "lets-wine",
