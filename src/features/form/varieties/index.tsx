@@ -1,4 +1,7 @@
-import { FC, useState } from "react";
+import { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { SketchPicker } from "react-color";
+
 import {
   Grid,
   FormControl,
@@ -6,9 +9,15 @@ import {
   FormControlLabel,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { SketchPicker } from "react-color";
 
-import Spacer from "src/components/General/Spacer";
+import { RootState } from "src/features";
+import Spacer from "src/components/Spacer";
+import {
+  setTitle,
+  setSubtitle,
+  setDescription,
+  setBgColor,
+} from "./varietiesSlice";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -22,8 +31,16 @@ const useStyles = makeStyles((theme) => ({
 
 const Varieties: FC = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
-  const [bgColor, setBgColor] = useState<string>("#faffe0");
+  const { title, subtitle, description, background_color } = useSelector(
+    (state: RootState) => ({
+      title: state.varietiesSlice.title,
+      subtitle: state.varietiesSlice.subtitle,
+      description: state.varietiesSlice.description,
+      background_color: state.varietiesSlice.background_color,
+    })
+  );
 
   return (
     <Grid container className={classes.root}>
@@ -31,8 +48,10 @@ const Varieties: FC = () => {
         <FormControl className={classes.formControl}>
           <TextField
             label="제목"
+            value={title}
             placeholder="Ex. Chardonnay"
             style={{ minWidth: "240px" }}
+            onChange={({ target: { value } }) => dispatch(setTitle(value))}
           />
         </FormControl>
       </Grid>
@@ -41,15 +60,22 @@ const Varieties: FC = () => {
         <FormControl className={classes.formControl}>
           <TextField
             label="부제"
+            value={subtitle}
             placeholder="Ex. 샤도네이"
             style={{ minWidth: "240px" }}
+            onChange={({ target: { value } }) => dispatch(setSubtitle(value))}
           />
         </FormControl>
       </Grid>
       <Spacer axis="vertical" size={12} />
       <Grid item xs={12}>
         <FormControl className={classes.formControl}>
-          <TextField label="설명" style={{ minWidth: "240px" }} />
+          <TextField
+            label="설명"
+            value={description}
+            style={{ minWidth: "240px" }}
+            onChange={({ target: { value } }) => dispatch(setDescription(value))}
+          />
         </FormControl>
       </Grid>
       <Spacer axis="vertical" size={12} />
@@ -60,8 +86,8 @@ const Varieties: FC = () => {
           control={
             <div className={classes.sketchPickerWrapper}>
               <SketchPicker
-                color={bgColor}
-                onChangeComplete={(color) => setBgColor(color.hex)}
+                color={background_color}
+                onChangeComplete={(color) => dispatch(setBgColor(color.hex))}
               />
             </div>
           }

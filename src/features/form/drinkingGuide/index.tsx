@@ -1,4 +1,5 @@
-import { FC, ChangeEvent, useState } from "react";
+import { FC, ChangeEvent } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   FormLabel,
   FormControl,
@@ -11,7 +12,18 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import Spacer from "src/components/General/Spacer";
+import Spacer from "src/components/Spacer";
+import { RootState } from "src/features";
+
+import {
+  setGlass,
+  setDecanting,
+  setTemperature,
+  setCharacteristicBody,
+  setCharacteristicAcidic,
+  setCharacteristicTannic,
+  setCharacteristicSweet,
+} from "./drinkingGuideSlice";
 
 const temp_marks = [
   {
@@ -71,13 +83,6 @@ const char_marks = [
   },
 ];
 
-interface Characteristics {
-  body: number;
-  acidic: number;
-  tannic: number;
-  sweet: number;
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {},
   formControl: {
@@ -86,18 +91,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DrinkingGuide: FC = () => {
+const Index: FC = () => {
   const classes = useStyles();
-
-  const [glass, setGlass] = useState<string>("3");
-  const [decanting, setDecanting] = useState<boolean>(false);
-  const [temp, setTemp] = useState([7, 13]);
-  const [characteristics, setCharacteristics] = useState<Characteristics>({
-    body: 1,
-    acidic: 2,
-    tannic: 3,
-    sweet: 4,
-  });
+  const dispatch = useDispatch();
+  const { glass, decanting, temperature, characteristics } = useSelector(
+    (state: RootState) => ({
+      glass: state.drinkingGuideSlice.glass,
+      decanting: state.drinkingGuideSlice.decanting,
+      temperature: state.drinkingGuideSlice.temperature,
+      characteristics: state.drinkingGuideSlice.characteristics,
+    })
+  );
 
   return (
     <Grid container className={classes.root}>
@@ -107,10 +111,12 @@ const DrinkingGuide: FC = () => {
           <RadioGroup
             aria-label="gender"
             name="화이트"
-            value={glass}
+            value={String(glass)}
             onChange={({
               target: { value },
-            }: ChangeEvent<{ value: unknown }>) => setGlass(value as string)}
+            }: ChangeEvent<{ value: unknown }>) =>
+              dispatch(setGlass(value as string))
+            }
           >
             <FormControlLabel value="1" control={<Radio />} label="와인잔 1" />
             <FormControlLabel value="2" control={<Radio />} label="와인잔 2" />
@@ -128,7 +134,7 @@ const DrinkingGuide: FC = () => {
           control={
             <Switch
               checked={decanting}
-              onChange={(e) => setDecanting(e.target.checked)}
+              onChange={(e) => dispatch(setDecanting(e.target.checked))}
             />
           }
         />
@@ -143,13 +149,17 @@ const DrinkingGuide: FC = () => {
             <Slider
               getAriaValueText={(value) => `${value}°C`}
               step={1}
-              value={temp}
+              value={[temperature.min, temperature.max]}
               aria-labelledby="range-slider"
               valueLabelDisplay="on"
               marks={temp_marks}
               min={-40}
               max={40}
-              onChange={(e, v) => setTemp(v as Array<number>)}
+              onChange={(e, v) => {
+                const [min, max] = Array.isArray(v) ? v : [];
+
+                min && max && dispatch(setTemperature({ min, max }));
+              }}
             />
           }
         />
@@ -169,12 +179,7 @@ const DrinkingGuide: FC = () => {
               marks={char_marks}
               min={1}
               max={4}
-              onChange={(e, v) =>
-                setCharacteristics({
-                  ...characteristics,
-                  body: v as number,
-                })
-              }
+              onChange={(e, v) => dispatch(setCharacteristicBody(v))}
             />
           }
         />
@@ -194,12 +199,7 @@ const DrinkingGuide: FC = () => {
               marks={char_marks}
               min={1}
               max={4}
-              onChange={(e, v) =>
-                setCharacteristics({
-                  ...characteristics,
-                  acidic: v as number,
-                })
-              }
+              onChange={(e, v) => dispatch(setCharacteristicAcidic(v))}
             />
           }
         />
@@ -219,12 +219,7 @@ const DrinkingGuide: FC = () => {
               marks={char_marks}
               min={1}
               max={4}
-              onChange={(e, v) =>
-                setCharacteristics({
-                  ...characteristics,
-                  tannic: v as number,
-                })
-              }
+              onChange={(e, v) => dispatch(setCharacteristicTannic(v))}
             />
           }
         />
@@ -244,12 +239,7 @@ const DrinkingGuide: FC = () => {
               marks={char_marks}
               min={1}
               max={4}
-              onChange={(e, v) =>
-                setCharacteristics({
-                  ...characteristics,
-                  sweet: v as number,
-                })
-              }
+              onChange={(e, v) => dispatch(setCharacteristicSweet(v))}
             />
           }
         />
@@ -258,4 +248,4 @@ const DrinkingGuide: FC = () => {
   );
 };
 
-export default DrinkingGuide;
+export default Index;
