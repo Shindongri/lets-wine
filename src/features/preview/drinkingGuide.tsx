@@ -19,7 +19,7 @@ const DrinkingGuideFragment = () => {
       className="w-full flex flex-col items-center"
       style={{ backgroundColor: "#f1f1f1" }}
     >
-      <article className="w-full px-4 py-10 max-w-screen-xl">
+      <article className="w-full px-4 py-10 max-w-screen-sm">
         <div className="flex flex-col">
           <h4 className="text-sm" style={{ color: "#7f7f7f" }}>
             와인잔

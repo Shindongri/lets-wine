@@ -1,12 +1,16 @@
-import { FC } from "react";
-
+import { FC, lazy, Fragment, Suspense } from "react";
+import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import Main from "src/features/preview/main";
-import Varieties from "src/features/preview/varieties";
-import Scent from "src/features/preview/scent";
-import DrinkingGuide from "src/features/preview/drinkingGuide";
-import Indication from "src/features/preview/indication";
-import Pairing from "src/features/preview/pairing";
+
+import { ComponentType } from "src/types";
+import { RootState } from "src/features";
+
+const Main = lazy(() => import("src/features/preview/main"));
+const Varieties = lazy(() => import("src/features/preview/varieties"));
+const Scent = lazy(() => import("src/features/preview/scent"));
+const DrinkingGuide = lazy(() => import("src/features/preview/drinkingGuide"));
+const Indication = lazy(() => import("src/features/preview/indication"));
+const Pairing = lazy(() => import("src/features/preview/pairing"));
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -20,16 +24,37 @@ const useStyles = makeStyles(() => ({
 
 const Preview: FC = () => {
   const classes = useStyles();
+  const { components } = useSelector((state: RootState) => ({
+    components: state.appSlice.components,
+  }));
+
+  const getComponent = (component: ComponentType) => {
+    switch (component) {
+      case ComponentType.MAIN:
+        return <Main />;
+      case ComponentType.SCENT:
+        return <Scent />;
+      case ComponentType.VARIETIES:
+        return <Varieties />;
+      case ComponentType.DRINKING_GUIDE:
+        return <DrinkingGuide />;
+      case ComponentType.PAIRING:
+        return <Pairing />;
+      case ComponentType.INDICATION:
+        return <Indication />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className={classes.root}>
       <div id="result">
-        <Main />
-        <Scent />
-        <Varieties />
-        <DrinkingGuide />
-        <Pairing />
-        <Indication />
+        <Suspense fallback={<div>loading...</div>}>
+          {components.map((component, idx) => (
+            <Fragment key={idx}>{getComponent(component)}</Fragment>
+          ))}
+        </Suspense>
       </div>
     </div>
   );

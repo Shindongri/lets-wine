@@ -10,11 +10,15 @@ export interface Content {
 
 export interface PairingSliceState {
   title: string;
+  subtitle?: string;
+  description?: string;
   contents: Array<Content>;
 }
 
 const initialState = {
   title: "",
+  subtitle: "",
+  description: "",
   contents: [],
 } as PairingSliceState;
 
@@ -24,6 +28,12 @@ const pairingSlice = createSlice({
   reducers: {
     setTitle(state, action) {
       state.title = action.payload;
+    },
+    setSubtitle(state, action) {
+      state.subtitle = action.payload;
+    },
+    setDescription(state, action) {
+      state.description = action.payload;
     },
     addContent(state, action: PayloadAction<Content>) {
       const content = action.payload;
@@ -72,6 +82,8 @@ const pairingSlice = createSlice({
 
 export const {
   setTitle,
+  setSubtitle,
+  setDescription,
   addContent,
   removeContent,
   setContentTitle,

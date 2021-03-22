@@ -6,6 +6,7 @@ import mainSlice from "./form/main/mainSlice";
 import pairingSlice from "./form/pairing/pairingSlice";
 import varietiesSlice from "./form/varieties/varietiesSlice";
 import scentSlice from "./form/scent/scentSlice";
+import appSlice from "./app/appSlice";
 
 /* Root Reducer */
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   pairingSlice,
   varietiesSlice,
   scentSlice,
+  appSlice,
 });
 
 export default rootReducer;

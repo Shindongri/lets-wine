@@ -21,7 +21,7 @@ const IndicationFragment = () => {
 
   return (
     <footer className="w-full flex flex-col items-center">
-      <div className="w-full px-4 py-10 max-w-screen-xl">
+      <div className="w-full px-4 py-10 max-w-screen-sm">
         {imageUrl ? (
           <img className="w-full object-contain" src={imageUrl} />
         ) : (

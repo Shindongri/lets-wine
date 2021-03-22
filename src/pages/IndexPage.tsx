@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { Button, Divider, Grid } from "@material-ui/core";
-import { AddCircleOutline } from "@material-ui/icons";
+import { Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Spacer from "src/components/Spacer";
+import Register from "src/components/Register";
+
 import Preview from "src/features/preview";
-import Form from "src/features/form";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,25 +28,7 @@ const IndexPage: FC = () => {
     <div className={classes.root}>
       <Grid className={classes.container} container>
         <Grid item xs={5}>
-          <Grid container>
-            <Grid item xs={12}>
-              <Button
-                startIcon={<AddCircleOutline />}
-                variant="contained"
-                color="primary"
-              >
-                컴포넌트 추가
-              </Button>
-            </Grid>
-            <Spacer axis="vertical" size={24} />
-            <Grid item xs={12}>
-              <Grid container>
-                <Grid item xs={12}>
-                  <Form />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
+          <Register />
         </Grid>
         <Spacer axis="horizontal" size={24} />
         <Divider orientation="vertical" flexItem />

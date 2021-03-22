@@ -16,7 +16,7 @@ const VarietiesFragment = () => {
       className="w-full flex flex-col items-center"
       style={{ backgroundColor }}
     >
-      <article className="px-4 py-10 max-w-screen-xl">
+      <article className="px-4 py-10 max-w-screen-sm">
         <h4 className="font-bold text-2xl" style={{ color: "#282828" }}>
           {title}
         </h4>
