@@ -53,9 +53,7 @@ const Form: FC = () => {
               >
                 <MenuItem value={ComponentType.MAIN}>메인</MenuItem>
                 <MenuItem value={ComponentType.VARIETIES}>품종</MenuItem>
-                <MenuItem value={ComponentType.SCENT}>
-                  Scent
-                </MenuItem>
+                <MenuItem value={ComponentType.SCENT}>Scent</MenuItem>
                 <MenuItem value={ComponentType.PAIRING}>
                   Pairing / 드링크 페어링 / 페어링 파트너
                 </MenuItem>

@@ -23,7 +23,7 @@ const IndicationFragment = () => {
     <footer className="w-full flex flex-col items-center">
       <div className="w-full px-4 py-10 max-w-screen-sm">
         {imageUrl ? (
-          <img className="w-full object-contain" src={imageUrl} />
+          <img className="w-full object-contain" src={imageUrl} alt="" />
         ) : (
           <>
             <h4 className="text-sm font-bold" style={{ color: "#282828" }}>

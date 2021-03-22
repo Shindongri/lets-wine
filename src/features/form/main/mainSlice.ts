@@ -70,8 +70,10 @@ const mainSlice = createSlice({
       state.contents[key].embedded_url = embeddedUrl;
     },
     removeContent(state, action) {
-      state.contents = [...state.contents].filter((content, idx) => idx !== action.payload);
-    }
+      state.contents = [...state.contents].filter(
+        (content, idx) => idx !== action.payload
+      );
+    },
   },
 });
 

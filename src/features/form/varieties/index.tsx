@@ -74,7 +74,9 @@ const Varieties: FC = () => {
             label="설명"
             value={description}
             style={{ minWidth: "240px" }}
-            onChange={({ target: { value } }) => dispatch(setDescription(value))}
+            onChange={({ target: { value } }) =>
+              dispatch(setDescription(value))
+            }
           />
         </FormControl>
       </Grid>

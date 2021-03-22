@@ -59,7 +59,6 @@ const drinkingGuideSlice = createSlice({
     },
     setCharacteristicAcidic(state, action) {
       state.characteristics.acidic = action.payload;
-
     },
     setCharacteristicTannic(state, action) {
       state.characteristics.tannic = action.payload;

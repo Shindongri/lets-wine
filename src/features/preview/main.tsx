@@ -12,7 +12,7 @@ const MainFragment = () => {
 
   return (
     <section className="w-full flex flex-col items-center">
-      <img className="w-full object-contain" src={mainImageUrl} />
+      <img className="w-full object-contain" src={mainImageUrl} alt="" />
       <article className="px-4 py-10 max-w-screen-sm">
         <a
           href={shortcut.link_url}
@@ -62,6 +62,7 @@ const MainFragment = () => {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                      title="youtube"
                     />
                   </div>
                 )}

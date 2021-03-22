@@ -48,6 +48,7 @@ const PairingFragment = () => {
               style={{ flex: "0 0 auto", marginLeft: "24px" }}
               href={content.link_url}
               target="_blank"
+              rel="noreferrer"
             >
               <img
                 style={{
@@ -56,6 +57,7 @@ const PairingFragment = () => {
                   objectFit: "contain",
                 }}
                 src={content.image_url}
+                alt=""
               />
               <span className="spacer vertical" style={{ height: "18px" }} />
               <h6 className="text-base leading-4" style={{ color: "#282828" }}>

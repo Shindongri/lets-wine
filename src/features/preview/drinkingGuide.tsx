@@ -37,6 +37,7 @@ const DrinkingGuideFragment = () => {
             className="self-center"
             width="80%"
             src={`http://wineplz.cafe24.com/web/upload/img/wineglass_${glass}s.svg`}
+            alt=""
           />
         </div>
         <span className="spacer vertical" style={{ height: "42px" }} />
@@ -55,6 +56,7 @@ const DrinkingGuideFragment = () => {
               src={`http://wineplz.cafe24.com/web/upload/img/decanting${
                 decanting ? 1 : 2
               }s.svg`}
+              alt=""
             />
           </div>
           <div>
@@ -69,6 +71,7 @@ const DrinkingGuideFragment = () => {
             <img
               width="96"
               src="http://wineplz.cafe24.com/web/upload/img/temp_s.svg"
+              alt=""
             />
           </div>
         </div>
@@ -83,6 +86,7 @@ const DrinkingGuideFragment = () => {
               <img
                 className="col-span-5 h-6 w-9/12"
                 src={`http://wineplz.cafe24.com/web/upload/img/bar_${body}s.svg`}
+                alt=""
               />
             </li>
             <span className="spacer vertical" style={{ height: "20px" }} />
@@ -94,6 +98,7 @@ const DrinkingGuideFragment = () => {
               <img
                 className="col-span-5 h-6 w-9/12"
                 src={`http://wineplz.cafe24.com/web/upload/img/bar_${acidic}s.svg`}
+                alt=""
               />
             </li>
             <span className="spacer vertical" style={{ height: "20px" }} />
@@ -105,6 +110,7 @@ const DrinkingGuideFragment = () => {
               <img
                 className="col-span-5 h-6 w-9/12"
                 src={`http://wineplz.cafe24.com/web/upload/img/bar_${tannic}s.svg`}
+                alt=""
               />
             </li>
             <span className="spacer vertical" style={{ height: "20px" }} />
@@ -116,6 +122,7 @@ const DrinkingGuideFragment = () => {
               <img
                 className="col-span-5 h-6 w-9/12"
                 src={`http://wineplz.cafe24.com/web/upload/img/bar_${sweet}s.svg`}
+                alt=""
               />
             </li>
           </ul>

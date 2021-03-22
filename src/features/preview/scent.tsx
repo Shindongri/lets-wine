@@ -30,7 +30,11 @@ const ScentFragment = () => {
         <div className="w-full flex items-center justify-between">
           {images.map((image, idx) => (
             <Fragment key={idx}>
-              <img style={{ width: `calc((100% / ${images.length}) - 24px)` }} src={image} />
+              <img
+                style={{ width: `calc((100% / ${images.length}) - 24px)` }}
+                src={image}
+                alt=""
+              />
             </Fragment>
           ))}
         </div>

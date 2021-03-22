@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { PURGE } from "redux-persist";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import {
@@ -52,6 +53,11 @@ const Register: FC = () => {
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
+      dispatch({
+        type: PURGE,
+        key: "lets-wine",
+        result: () => null,
+      });
     }, 2000);
   };
 

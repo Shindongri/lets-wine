@@ -38,12 +38,10 @@ const Index: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const { title, contents } = useSelector(
-    (state: RootState) => ({
-      title: state.pairingSlice.title,
-      contents: state.pairingSlice.contents,
-    })
-  );
+  const { title, contents } = useSelector((state: RootState) => ({
+    title: state.pairingSlice.title,
+    contents: state.pairingSlice.contents,
+  }));
 
   return (
     <Grid container className={classes.root}>
