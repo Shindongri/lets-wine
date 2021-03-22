@@ -29,6 +29,7 @@ const Pairing = lazy(() => import("src/features/form/pairing"));
 const Varieties = lazy(() => import("src/features/form/varieties"));
 const DrinkingGuide = lazy(() => import("src/features/form/drinkingGuide"));
 const Indication = lazy(() => import("src/features/form/indication"));
+const Scent = lazy(() => import("src/features/form/scent"));
 
 const Form: FC = () => {
   const classes = useStyles();
@@ -52,8 +53,11 @@ const Form: FC = () => {
               >
                 <MenuItem value={ComponentType.MAIN}>메인</MenuItem>
                 <MenuItem value={ComponentType.VARIETIES}>품종</MenuItem>
+                <MenuItem value={ComponentType.SCENT}>
+                  Scent
+                </MenuItem>
                 <MenuItem value={ComponentType.PAIRING}>
-                  Scent / Pairing / 드링크 페어링 / 페어링 파트너
+                  Pairing / 드링크 페어링 / 페어링 파트너
                 </MenuItem>
                 <MenuItem value={ComponentType.DRINKING_GUIDE}>
                   음용정보
@@ -69,6 +73,7 @@ const Form: FC = () => {
             <Suspense fallback={() => <div>Loading...</div>}>
               {type === ComponentType.MAIN && <Main />}
               {type === ComponentType.PAIRING && <Pairing />}
+              {type === ComponentType.SCENT && <Scent />}
               {type === ComponentType.VARIETIES && <Varieties />}
               {type === ComponentType.DRINKING_GUIDE && <DrinkingGuide />}
               {type === ComponentType.INDICATION && <Indication />}

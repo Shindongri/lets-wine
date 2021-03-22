@@ -4,4 +4,5 @@ export enum ComponentType {
   VARIETIES = "VARIETIES",
   DRINKING_GUIDE = "DRINKING_GUIDE",
   INDICATION = "INDICATION",
+  SCENT = "SCENT",
 }

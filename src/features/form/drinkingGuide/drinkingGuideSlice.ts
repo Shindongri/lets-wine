@@ -66,7 +66,6 @@ const drinkingGuideSlice = createSlice({
     },
     setCharacteristicSweet(state, action) {
       state.characteristics.sweet = action.payload;
-
     },
   },
 });
