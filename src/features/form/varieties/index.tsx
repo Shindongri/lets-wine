@@ -47,7 +47,7 @@ const Varieties: FC = () => {
       <Grid item xs={12}>
         <FormControl className={classes.formControl}>
           <TextField
-            label="제목"
+            label="품종(영문)"
             value={title}
             placeholder="Ex. Chardonnay"
             style={{ minWidth: "240px" }}
@@ -59,7 +59,7 @@ const Varieties: FC = () => {
       <Grid item xs={12}>
         <FormControl className={classes.formControl}>
           <TextField
-            label="부제"
+            label="퓸종(한글)"
             value={subtitle}
             placeholder="Ex. 샤도네이"
             style={{ minWidth: "240px" }}

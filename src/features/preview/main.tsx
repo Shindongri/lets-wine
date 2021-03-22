@@ -13,22 +13,24 @@ const MainFragment = () => {
   return (
     <section className="w-full flex flex-col items-center">
       <img className="w-full object-contain" src={mainImageUrl} alt="" />
-      <article className="px-4 py-10 max-w-screen-sm">
-        <a
-          href={shortcut.link_url}
-          className="font-bold text-2xl flex justify-center"
-          style={{ color: "#282828" }}
-        >
-          {shortcut.title}
-        </a>
-        <span className="spacer vertical" style={{ height: "12px" }} />
-        <p
-          className="text-base leading-5 flex flex-col items-center justify-center"
-          style={{ color: "#4d4d4d" }}
-        >
-          {shortcut.description}
-        </p>
-      </article>
+      {!!(shortcut.title || shortcut.description || shortcut.link_url) && (
+        <article className="px-4 py-10 max-w-screen-sm">
+          <a
+            href={shortcut.link_url}
+            className="font-bold text-2xl flex justify-center"
+            style={{ color: "#282828" }}
+          >
+            {shortcut.title}
+          </a>
+          <span className="spacer vertical" style={{ height: "12px" }} />
+          <p
+            className="text-base leading-5 flex flex-col items-center justify-center"
+            style={{ color: "#4d4d4d" }}
+          >
+            {shortcut.description}
+          </p>
+        </article>
+      )}
       <article className="px-4 py-10 max-w-screen-sm">
         <dl>
           {contents.map((content, idx) => (

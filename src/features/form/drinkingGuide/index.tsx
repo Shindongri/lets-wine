@@ -10,6 +10,7 @@ import {
   FormControlLabel,
   Switch,
 } from "@material-ui/core";
+import { Rating } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Spacer from "src/components/Spacer";
@@ -26,14 +27,6 @@ import {
 } from "./drinkingGuideSlice";
 
 const temp_marks = [
-  {
-    value: -40,
-    label: "-40°C",
-  },
-  {
-    value: -30,
-    label: "-30°C",
-  },
   {
     value: -20,
     label: "-20°C",
@@ -53,33 +46,6 @@ const temp_marks = [
   {
     value: 20,
     label: "20°C",
-  },
-  {
-    value: 30,
-    label: "30°C",
-  },
-  {
-    value: 40,
-    label: "40°C",
-  },
-];
-
-const char_marks = [
-  {
-    value: 1,
-    label: 1,
-  },
-  {
-    value: 2,
-    label: 2,
-  },
-  {
-    value: 3,
-    label: 3,
-  },
-  {
-    value: 4,
-    label: 4,
   },
 ];
 
@@ -153,8 +119,8 @@ const Index: FC = () => {
               aria-labelledby="range-slider"
               valueLabelDisplay="on"
               marks={temp_marks}
-              min={-40}
-              max={40}
+              min={-20}
+              max={20}
               onChange={(e, v) => {
                 const [min, max] = Array.isArray(v) ? v : [];
 
@@ -171,13 +137,8 @@ const Index: FC = () => {
           labelPlacement="top"
           className={classes.formControl}
           control={
-            <Slider
-              step={1}
+            <Rating
               value={characteristics.body}
-              aria-labelledby="range-slider"
-              valueLabelDisplay="on"
-              marks={char_marks}
-              min={1}
               max={4}
               onChange={(e, v) => dispatch(setCharacteristicBody(v))}
             />
@@ -191,13 +152,8 @@ const Index: FC = () => {
           labelPlacement="top"
           className={classes.formControl}
           control={
-            <Slider
-              step={1}
+            <Rating
               value={characteristics.acidic}
-              aria-labelledby="range-slider"
-              valueLabelDisplay="on"
-              marks={char_marks}
-              min={1}
               max={4}
               onChange={(e, v) => dispatch(setCharacteristicAcidic(v))}
             />
@@ -211,13 +167,8 @@ const Index: FC = () => {
           labelPlacement="top"
           className={classes.formControl}
           control={
-            <Slider
-              step={1}
+            <Rating
               value={characteristics.tannic}
-              aria-labelledby="range-slider"
-              valueLabelDisplay="on"
-              marks={char_marks}
-              min={1}
               max={4}
               onChange={(e, v) => dispatch(setCharacteristicTannic(v))}
             />
@@ -231,13 +182,8 @@ const Index: FC = () => {
           labelPlacement="top"
           className={classes.formControl}
           control={
-            <Slider
-              step={1}
+            <Rating
               value={characteristics.sweet}
-              aria-labelledby="range-slider"
-              valueLabelDisplay="on"
-              marks={char_marks}
-              min={1}
               max={4}
               onChange={(e, v) => dispatch(setCharacteristicSweet(v))}
             />
