@@ -18,6 +18,9 @@ const pairingSlice = createSlice({
   name: "scent",
   initialState,
   reducers: {
+    clear(state) {
+      state = initialState;
+    },
     setTitle(state, action) {
       state.title = action.payload;
     },

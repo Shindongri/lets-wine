@@ -12,7 +12,8 @@ import {
   Select,
 } from "@material-ui/core";
 
-import { ComponentType } from "src/types";
+import { AVAILABLE_MENU_LIST } from "src/types";
+import { mapMenuValueToMenuLabel } from "../../utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,13 +31,18 @@ const Varieties = lazy(() => import("src/features/form/varieties"));
 const DrinkingGuide = lazy(() => import("src/features/form/drinkingGuide"));
 const Indication = lazy(() => import("src/features/form/indication"));
 const Scent = lazy(() => import("src/features/form/scent"));
+const BrandShopTop = lazy(() => import("src/features/form/brandShopTop"));
+const BrandShopBottom = lazy(() => import("src/features/form/brandShopBottom"));
 
 const Form: FC = () => {
   const classes = useStyles();
-  const [type, setType] = useState<ComponentType>(ComponentType.MAIN);
+  const [type, setType] = useState<AVAILABLE_MENU_LIST>(
+    AVAILABLE_MENU_LIST.MAIN
+  );
+
   const handleChange = ({
     target: { value },
-  }: ChangeEvent<{ value: unknown }>) => setType(value as ComponentType);
+  }: ChangeEvent<{ value: unknown }>) => setType(value as AVAILABLE_MENU_LIST);
 
   return (
     <Paper>
@@ -51,30 +57,28 @@ const Form: FC = () => {
                 value={type}
                 onChange={handleChange}
               >
-                <MenuItem value={ComponentType.MAIN}>메인</MenuItem>
-                <MenuItem value={ComponentType.VARIETIES}>품종</MenuItem>
-                <MenuItem value={ComponentType.SCENT}>Scent</MenuItem>
-                <MenuItem value={ComponentType.PAIRING}>
-                  Pairing / 드링크 페어링 / 페어링 파트너
-                </MenuItem>
-                <MenuItem value={ComponentType.DRINKING_GUIDE}>
-                  음용정보
-                </MenuItem>
-                <MenuItem value={ComponentType.INDICATION}>
-                  한글 표시사항
-                </MenuItem>
+                {Object.values({...AVAILABLE_MENU_LIST})
+                  .map((menu) => (
+                    <MenuItem key={menu} value={menu}>
+                      {mapMenuValueToMenuLabel(menu)}
+                    </MenuItem>
+                  ))}
               </Select>
             </FormControl>
           </Grid>
           <Divider />
           <Grid item xs={12}>
             <Suspense fallback={() => <div>Loading...</div>}>
-              {type === ComponentType.MAIN && <Main />}
-              {type === ComponentType.PAIRING && <Pairing />}
-              {type === ComponentType.SCENT && <Scent />}
-              {type === ComponentType.VARIETIES && <Varieties />}
-              {type === ComponentType.DRINKING_GUIDE && <DrinkingGuide />}
-              {type === ComponentType.INDICATION && <Indication />}
+              {type === AVAILABLE_MENU_LIST.MAIN && <Main />}
+              {type === AVAILABLE_MENU_LIST.PAIRING && <Pairing />}
+              {type === AVAILABLE_MENU_LIST.SCENT && <Scent />}
+              {type === AVAILABLE_MENU_LIST.VARIETIES && <Varieties />}
+              {type === AVAILABLE_MENU_LIST.DRINKING_GUIDE && <DrinkingGuide />}
+              {type === AVAILABLE_MENU_LIST.INDICATION && <Indication />}
+              {type === AVAILABLE_MENU_LIST.BRAND_SHOP_TOP && <BrandShopTop />}
+              {type === AVAILABLE_MENU_LIST.BRAND_SHOP_BOTTOM && (
+                <BrandShopBottom />
+              )}
             </Suspense>
           </Grid>
         </Grid>

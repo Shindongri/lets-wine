@@ -22,15 +22,15 @@ import {
 } from "react-beautiful-dnd";
 
 import { setComponents, removeComponent } from "src/features/app/appSlice";
-import { ComponentType } from "../types";
-import { mapComponentTypeToLabel } from "../utils";
+import { AVAILABLE_MENU_LIST } from "../types";
+import { mapMenuValueToMenuLabel } from "../utils";
 
 interface Props {
-  items: Array<ComponentType>;
+  items: Array<AVAILABLE_MENU_LIST>;
 }
 
 const reorder = (
-  list: Array<ComponentType>,
+  list: Array<AVAILABLE_MENU_LIST>,
   startIndex: number,
   endIndex: number
 ) => {
@@ -72,8 +72,8 @@ const DraggableOrderList: FC<Props> = ({ items }) => {
     dispatch(setComponents(reorderedItems));
   };
 
-  const getListItemText = (idx: number, item: ComponentType) =>
-    `${idx + 1}. ${mapComponentTypeToLabel(item)}`;
+  const getListItemText = (idx: number, item: AVAILABLE_MENU_LIST) =>
+    `${idx + 1}. ${mapMenuValueToMenuLabel(item)}`;
 
   return (
     <Paper style={{ marginTop: "24px", width: "100%" }}>

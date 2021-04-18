@@ -4,7 +4,6 @@ import {
   FormLabel,
   FormControl,
   Grid,
-  Slider,
   RadioGroup,
   Radio,
   FormControlLabel,
@@ -19,35 +18,11 @@ import { RootState } from "src/features";
 import {
   setGlass,
   setDecanting,
-  setTemperature,
   setCharacteristicBody,
   setCharacteristicAcidic,
   setCharacteristicTannic,
   setCharacteristicSweet,
 } from "./drinkingGuideSlice";
-
-const temp_marks = [
-  {
-    value: -20,
-    label: "-20°C",
-  },
-  {
-    value: -10,
-    label: "-10°C",
-  },
-  {
-    value: 0,
-    label: "0°C",
-  },
-  {
-    value: 10,
-    label: "10°C",
-  },
-  {
-    value: 20,
-    label: "20°C",
-  },
-];
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -57,14 +32,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Index: FC = () => {
+const DrinkingGuide: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { glass, decanting, temperature, characteristics } = useSelector(
+  const { glass, decanting, characteristics } = useSelector(
     (state: RootState) => ({
       glass: state.drinkingGuideSlice.glass,
       decanting: state.drinkingGuideSlice.decanting,
-      temperature: state.drinkingGuideSlice.temperature,
       characteristics: state.drinkingGuideSlice.characteristics,
     })
   );
@@ -101,31 +75,6 @@ const Index: FC = () => {
             <Switch
               checked={decanting}
               onChange={(e) => dispatch(setDecanting(e.target.checked))}
-            />
-          }
-        />
-      </Grid>
-      <Spacer axis="vertical" size={12} />
-      <Grid item xs={12}>
-        <FormControlLabel
-          label="음용 온도"
-          labelPlacement="top"
-          className={classes.formControl}
-          control={
-            <Slider
-              getAriaValueText={(value) => `${value}°C`}
-              step={1}
-              value={[temperature.min, temperature.max]}
-              aria-labelledby="range-slider"
-              valueLabelDisplay="on"
-              marks={temp_marks}
-              min={-20}
-              max={20}
-              onChange={(e, v) => {
-                const [min, max] = Array.isArray(v) ? v : [];
-
-                min && max && dispatch(setTemperature({ min, max }));
-              }}
             />
           }
         />
@@ -194,4 +143,4 @@ const Index: FC = () => {
   );
 };
 
-export default Index;
+export default DrinkingGuide;

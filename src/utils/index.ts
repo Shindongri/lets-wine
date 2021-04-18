@@ -1,19 +1,29 @@
-import { ComponentType } from "../types";
+import { AVAILABLE_MENU_LIST } from "../types";
 
-export const mapComponentTypeToLabel = (type: ComponentType) => {
+export const mapMenuValueToMenuLabel = (type: AVAILABLE_MENU_LIST) => {
   switch (type) {
-    case ComponentType.MAIN:
+    case AVAILABLE_MENU_LIST.MAIN:
       return "메인";
-    case ComponentType.VARIETIES:
+    case AVAILABLE_MENU_LIST.VARIETIES:
       return "품종";
-    case ComponentType.PAIRING:
+    case AVAILABLE_MENU_LIST.PAIRING:
       return "Pairing / 드링킹 페어링 / 페어링 파트너";
-    case ComponentType.SCENT:
+    case AVAILABLE_MENU_LIST.SCENT:
       return "Scent";
-    case ComponentType.INDICATION:
+    case AVAILABLE_MENU_LIST.INDICATION:
       return "한글 표시사항";
-    case ComponentType.DRINKING_GUIDE:
+    case AVAILABLE_MENU_LIST.DRINKING_GUIDE:
       return "음용정보";
+    case AVAILABLE_MENU_LIST.WARNING:
+      return "주류 경고문구";
+    case AVAILABLE_MENU_LIST.ADULT:
+      return "성인인증, 19세 경고문구";
+    case AVAILABLE_MENU_LIST.SMART_ORDER:
+      return "주류 스마트 오더";
+    case AVAILABLE_MENU_LIST.BRAND_SHOP_TOP:
+      return "브랜드샵(TOP)";
+    case AVAILABLE_MENU_LIST.BRAND_SHOP_BOTTOM:
+      return "브랜드샵(BOTTOM)";
   }
 };
 
@@ -46,6 +56,9 @@ export const insertResultToTemplate = (result: string) => `
     <style>
       * {
         font-family: "Spoqa Han Sans Neo", "sans-serif";
+      }
+      img {
+        border-style: initial !important;
       }
       .spacer {
         display: block;

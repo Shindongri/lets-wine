@@ -8,20 +8,18 @@ const IndicationFragment = () => {
     subtitle,
     description,
     contents,
-    warning,
     imageUrl,
   } = useSelector((state: RootState) => ({
     title: state.indicationSlice.title,
     subtitle: state.indicationSlice.subtitle,
     description: state.indicationSlice.description,
     contents: state.indicationSlice.contents,
-    warning: state.indicationSlice.warning,
     imageUrl: state.indicationSlice.image_url,
   }));
 
   return (
     <footer className="w-full flex flex-col items-center">
-      <div className="w-full px-4 py-10 max-w-screen-sm">
+      <div className="w-full px-4 py-5 max-w-screen-sm">
         {imageUrl ? (
           <img className="w-full object-contain" src={imageUrl} alt="" />
         ) : (
@@ -32,13 +30,14 @@ const IndicationFragment = () => {
             <h4 className="text-sm" style={{ color: "#282828" }}>
               {subtitle}
             </h4>
-            <h6 className="text-xs" style={{ color: "#282828" }}>
+            <span className="spacer vertical" style={{ height: "24px" }} />
+            <h6 className="text-xs font-bold" style={{ color: "#282828" }}>
               {description}
             </h6>
-            <span className="spacer vertical" style={{ height: "24px" }} />
+            <span className="spacer vertical" style={{ height: "12px" }} />
             <dl>
-              {contents.map((content, idx) => (
-                <Fragment key={idx}>
+              {contents.map(content => (
+                <Fragment key={content.key}>
                   <dt className="block float-left font-bold text-xs leading-5">
                     {content.label}:&nbsp;
                   </dt>
@@ -46,8 +45,6 @@ const IndicationFragment = () => {
                 </Fragment>
               ))}
             </dl>
-            <span className="spacer vertical" style={{ height: "24px" }} />
-            <small className="text-xs leading-3">{warning}</small>
           </>
         )}
       </div>

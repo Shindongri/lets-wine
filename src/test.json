@@ -1,0 +1,33 @@
+[
+  {
+    "MAIN.main_image_url": "http://wineplz.cafe24.com/web/upload/img/tussock001m.png",
+    "MAIN.shortcut.title": "브랜드샵 바로가기",
+    "MAIN.shortcut.description": "브랜드샵 설명",
+    "MAIN.shortcut.link_url": "https://naver.com/",
+    "MAIN.contents[0].title": "그냥 이거 사",
+    "MAIN.contents[0].description": "“좋은데?”라는 말이 절로 나오는 투썩 점퍼의 대표 와인입니다. 화이트 와인이지만 해산물을 비롯해 육류까지 어울리지 않는 것이 없어 선택 장애와 마주할 때 확실한 옵션이 되어 줍니다.",
+    "MAIN.contents[0].embedded_url": "",
+    "DRINKING_GUIDE.glass": 3,
+    "DRINKING_GUIDE.decanting": true,
+    "DRINKING_GUIDE.characteristics.body": 1,
+    "DRINKING_GUIDE.characteristics.acidic": 1,
+    "DRINKING_GUIDE.characteristics.tannic": 1,
+    "DRINKING_GUIDE.characteristics.sweet": 2,
+    "PAIRING.title": "Pairing",
+    "PAIRING.subtitle": "풍미",
+    "PAIRING.description": "잘 익은 복숭아, 설탕에 절인 살구, 꿀, 머스캣 향",
+    "PAIRING.contents[0].title": "카페ㅊa",
+    "PAIRING.contents[0].subtitle": "달고나 캔",
+    "PAIRING.contents[0].image_url": "http://wineplz.cafe24.com/web/upload/img/tussock_pair2m.png",
+    "PAIRING.images[0]": "http://wineplz.cafe24.com/web/upload/img/scent001.svg",
+    "VARIETIES.title": "Chardonnay",
+    "VARIETIES.subtitle": "샤도네이",
+    "VARIETIES.description": "레드 와인의 대표 주자가 케베르네 쇼비뇽이라면 화이트 와인의 간판 품종은 샤도네이입니다. 적당한 산도와 바디감, 낮은 당도와 드라이함을 특징으로 삼는 샤도네이는 만들어지는 방식에 따라 다른 풍미를 지닙니다.\\n발효 방식, 숙성에 사용되는 통의 종류, 숙성 기간 등에 의해 샤도네이 미감의 디테일이 결정됩니다. 다채로운 가능성을 지닌만큼 와이너리 별 샤도네이를 비교해가며 마시는 재미가 있습니다.\\n섬세한 요리와 잘 어울리는데 부드러운 질감의 해산물이나 크림, 버터 등과 함께한다면 환상적인 궁합을 즐길 수 있습니다.",
+    "VARIETIES.background_color": "#faffe0",
+    "INDICATION.image_url": "",
+    "INDICATION.title": "Tussock Jumper, 'Wild Boar' Chardonnay,",
+    "INDICATION.subtitle": "투썩 점퍼 와인즈 샤도네이",
+    "INDICATION.description[0].label": "유형",
+    "INDICATION.description[0].value": "과실주"
+  }
+]

@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MAX_IMAGES = 5;
 
-const Index: FC = () => {
+const Scent: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -101,7 +101,7 @@ const Index: FC = () => {
       </Grid>
       <Grid item xs={12}>
         {images.map((image, idx) => (
-          <Grid container alignItems="center">
+          <Grid key={idx} container alignItems="center">
             <Grid item xs={10}>
               <FormGroup key={idx} style={{ width: "100%" }}>
                 <FormControl className={classes.formControl}>
@@ -146,4 +146,4 @@ const Index: FC = () => {
   );
 };
 
-export default Index;
+export default Scent;

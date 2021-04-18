@@ -19,7 +19,7 @@ const ScentFragment = () => {
           {title}
         </h4>
         <span className="spacer vertical" style={{ height: "8px" }} />
-        <h6 className="text-2xl" style={{ color: "#282828" }}>
+        <h6 className="text-xl" style={{ color: "#282828" }}>
           {subtitle}
         </h6>
         <span className="spacer vertical" style={{ height: "30px" }} />
@@ -27,11 +27,11 @@ const ScentFragment = () => {
           {description}
         </p>
         <span className="spacer vertical" style={{ height: "30px" }} />
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex justify-between items-center">
           {images.map((image, idx) => (
             <Fragment key={idx}>
               <img
-                style={{ width: `calc((100% / ${images.length}) - 24px)` }}
+                style={{ width: `calc((100% / ${images.length}) - 36px)` }}
                 src={image}
                 alt=""
               />

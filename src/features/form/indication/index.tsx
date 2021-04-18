@@ -20,7 +20,6 @@ import {
   setSubtitle,
   setDescription,
   setImageUrl,
-  setWarning,
   setContentLabel,
   setContentValue,
   addContent,
@@ -41,21 +40,15 @@ const useStyles = makeStyles((theme) => ({
 const Indication: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const {
-    imageUrl,
-    title,
-    subtitle,
-    description,
-    contents,
-    warning,
-  } = useSelector((state: RootState) => ({
-    imageUrl: state.indicationSlice.image_url,
-    title: state.indicationSlice.title,
-    subtitle: state.indicationSlice.subtitle,
-    description: state.indicationSlice.description,
-    contents: state.indicationSlice.contents,
-    warning: state.indicationSlice.warning,
-  }));
+  const { imageUrl, title, subtitle, description, contents } = useSelector(
+    (state: RootState) => ({
+      imageUrl: state.indicationSlice.image_url,
+      title: state.indicationSlice.title,
+      subtitle: state.indicationSlice.subtitle,
+      description: state.indicationSlice.description,
+      contents: state.indicationSlice.contents,
+    })
+  );
 
   const [isImage, setIsImage] = useState<boolean>(!!imageUrl);
 
@@ -152,8 +145,6 @@ const Indication: FC = () => {
           <Grid item xs={12}>
             <Grid container alignItems="center">
               {contents?.map((content, idx) => {
-                console.log(content);
-
                 return (
                   <>
                     <Grid item xs={10}>
@@ -213,18 +204,6 @@ const Indication: FC = () => {
                 );
               })}
             </Grid>
-          </Grid>
-          <Spacer axis="vertical" size={12} />
-          <Grid item xs={12}>
-            <FormControl className={classes.formControl}>
-              <TextField
-                label="경고"
-                value={warning}
-                onChange={({ target: { value } }) =>
-                  dispatch(setWarning(value))
-                }
-              />
-            </FormControl>
           </Grid>
         </>
       )}

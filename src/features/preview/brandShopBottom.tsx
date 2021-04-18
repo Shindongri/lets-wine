@@ -1,38 +1,31 @@
 import { useSelector } from "react-redux";
 import { RootState } from "src/features";
 
-const PairingFragment = () => {
-  const { title, subtitle, description, contents } = useSelector(
+const BrandShopBottomFragment = () => {
+  const { title, link_url, subtitle, contents } = useSelector(
     (state: RootState) => ({
-      title: state.pairingSlice.title,
-      subtitle: state.pairingSlice.subtitle,
-      description: state.pairingSlice.description,
-      contents: state.pairingSlice.contents,
+      title: state.brandShopBottomSlice.title,
+      link_url: state.brandShopBottomSlice.link_url,
+      subtitle: state.brandShopBottomSlice.subtitle,
+      description: state.brandShopBottomSlice.description,
+      contents: state.brandShopBottomSlice.contents,
     })
   );
 
   return (
-    <section className="w-full flex flex-col items-center">
+    <section className="w-full flex flex-col items-start">
       <article className="w-full px-4 py-10 max-w-screen-sm flex flex-col">
         <h4 className="font-bold text-2xl" style={{ color: "#282828" }}>
           {title}
         </h4>
         <span className="spacer vertical" style={{ height: "8px" }} />
-        {subtitle && (
-          <>
-            <h6 className="text-2xl" style={{ color: "#282828" }}>
+        {subtitle && link_url && (
+          <a href={link_url}>
+            <h6 className="text-xl" style={{ color: "#282828" }}>
               {subtitle}
             </h6>
             <span className="spacer vertical" style={{ height: "30px" }} />
-          </>
-        )}
-        {description && (
-          <>
-            <p className="text-base leading-4" style={{ color: "#4d4d4d" }}>
-              {description}
-            </p>
-            <span className="spacer vertical" style={{ height: "30px" }} />
-          </>
+          </a>
         )}
         {!!contents?.length && (
           <div
@@ -83,4 +76,4 @@ const PairingFragment = () => {
   );
 };
 
-export default PairingFragment;
+export default BrandShopBottomFragment;

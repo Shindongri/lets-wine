@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import store from "src/store";
 
 import IndexPage from "./pages/IndexPage";
+import AutomationPage from "./pages/AutomationPage";
 
 let persistor = persistStore(store);
 
@@ -17,6 +18,9 @@ const App = () => (
         <Switch>
           <Route path="/" exact>
             <IndexPage />
+          </Route>
+          <Route path="/auto">
+            <AutomationPage />
           </Route>
         </Switch>
       </Router>

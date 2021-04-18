@@ -8,8 +8,9 @@ export interface Content {
   link_url?: string;
 }
 
-export interface PairingSliceState {
+export interface BrandShopSliceState {
   title: string;
+  link_url: string;
   subtitle?: string;
   description?: string;
   contents: Array<Content>;
@@ -17,13 +18,14 @@ export interface PairingSliceState {
 
 const initialState = {
   title: "",
+  link_url: "",
   subtitle: "",
   description: "",
   contents: [],
-} as PairingSliceState;
+} as BrandShopSliceState;
 
-const pairingSlice = createSlice({
-  name: "pairing",
+const brandShopTopSlice = createSlice({
+  name: "brandShopTop",
   initialState,
   reducers: {
     clear(state) {
@@ -31,6 +33,9 @@ const pairingSlice = createSlice({
     },
     setTitle(state, action) {
       state.title = action.payload;
+    },
+    setLinkUrl(state, action) {
+      state.link_url = action.payload;
     },
     setSubtitle(state, action) {
       state.subtitle = action.payload;
@@ -85,6 +90,7 @@ const pairingSlice = createSlice({
 
 export const {
   setTitle,
+  setLinkUrl,
   setSubtitle,
   setDescription,
   addContent,
@@ -93,6 +99,6 @@ export const {
   setContentSubtitle,
   setContentImageUrl,
   setContentLinkUrl,
-} = pairingSlice.actions;
+} = brandShopTopSlice.actions;
 
-export default pairingSlice.reducer;
+export default brandShopTopSlice.reducer;

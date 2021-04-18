@@ -1,96 +1,143 @@
 import React, { ChangeEvent, FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PURGE } from "redux-persist";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import {
   Button,
   Grid,
   MenuItem,
+  GridList,
+  GridListTile,
   Select,
-  Dialog,
-  DialogTitle,
 } from "@material-ui/core";
-import { AddCircleOutline } from "@material-ui/icons";
+import { AddCircleOutline, AttachFile, GetApp } from "@material-ui/icons";
 
-import { ComponentType } from "../types";
+import { AVAILABLE_MENU_LIST } from "../types";
 
 import Spacer from "./Spacer";
 import DraggableOrderList from "./DraggableOrderList";
 
 import { RootState } from "src/features";
 import Form from "src/features/form";
-import { addComponent } from "src/features/app/appSlice";
-import { insertResultToTemplate } from "src/utils";
+import {
+  addComponent,
+  addFiles,
+  addThumbnail,
+} from "src/features/app/appSlice";
+import { insertResultToTemplate, mapMenuValueToMenuLabel } from "src/utils";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginBottom: "24px",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+  },
+  tool: {
+    display: "flex",
+  },
+  button: {
+    width: "144px",
+  },
+  gridList: {
+    width: 256,
+    height: "100%",
+    transform: "translateZ(0)",
+  },
+  titleBar: {
+    background:
+      "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
+      "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+  },
+  icon: {
+    color: "white",
+  },
+}));
 
 const Register: FC = () => {
+  const classes = useStyles();
   const dispatch = useDispatch();
-  const { components } = useSelector((state: RootState) => ({
-    components: state.appSlice.components,
-  }));
+  const { components, files, mainImageUrl, thumbnailList } = useSelector(
+    (state: RootState) => ({
+      components: state.appSlice.components,
+      thumbnailList: state.appSlice.thumbnailList,
+      files: state.appSlice.files,
+      mainImageUrl: state.mainSlice.main_image_url,
+    })
+  );
 
-  const [type, setType] = useState<ComponentType | null>(ComponentType.MAIN);
-  const [resultHtmlString, setResultHtmlString] = useState<string>("");
-  const [copied, setCopied] = useState<boolean>(false);
+  const [type, setType] = useState<AVAILABLE_MENU_LIST | null>(
+    AVAILABLE_MENU_LIST.MAIN
+  );
 
   const handleChange = ({
     target: { value },
-  }: ChangeEvent<{ value: unknown }>) => setType(value as ComponentType);
+  }: ChangeEvent<{ value: unknown }>) => setType(value as AVAILABLE_MENU_LIST);
 
-  const handleClick = (t: ComponentType | null) => {
+  const handleClick = (t: AVAILABLE_MENU_LIST | null) => {
     if (t) {
       dispatch(addComponent(t));
       setType(null);
     }
   };
 
-  const handleExtract = () => {
+  const download = (stringifyHtml: string) => {
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style.display = "none";
+
+    const blob = new Blob([stringifyHtml], { type: "octet/stream" });
+    const url = window.URL.createObjectURL(blob);
+
+    a.href = url;
+    a.download = `${Math.random().toString(36).substr(2, 11)}.html`;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
+
+  const downloadFiles = () => files.forEach((file) => file && download(file));
+
+  const addHtmlFiles = async () => {
     const result = document.getElementById("result");
 
     result?.outerHTML &&
-      setResultHtmlString(insertResultToTemplate(result?.outerHTML));
-
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-      dispatch({
-        type: PURGE,
-        key: "lets-wine",
-        result: () => null,
-      });
-    }, 2000);
-  };
-
-  const handleCopied = () => {
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
+      (await dispatch(addFiles(insertResultToTemplate(result.outerHTML))));
+    await dispatch(addThumbnail(mainImageUrl));
   };
 
   return (
     <Grid container alignItems="center" style={{ width: "100%" }}>
-      <Grid item xs={5}>
+      {!!thumbnailList?.length && (
+        <Grid item xs={12} className={classes.root}>
+          <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+            {thumbnailList.map((thumbnail) => (
+              <GridListTile key={thumbnail}>
+                <img className="h-full object-cover" src={thumbnail} />
+              </GridListTile>
+            ))}
+          </GridList>
+        </Grid>
+      )}
+      <Grid item xs={12} className={classes.tool}>
         <Select
           labelId="component-select-label"
           id="component-select"
           value={type}
           onChange={handleChange}
-          style={{ minWidth: "100%" }}
+          style={{ minWidth: "144px" }}
         >
-          <MenuItem value={ComponentType.MAIN}>메인</MenuItem>
-          <MenuItem value={ComponentType.VARIETIES}>품종</MenuItem>
-          <MenuItem value={ComponentType.SCENT}>Scent</MenuItem>
-          <MenuItem value={ComponentType.PAIRING}>
-            Pairing / 드링크 페어링 / 페어링 파트너
-          </MenuItem>
-          <MenuItem value={ComponentType.DRINKING_GUIDE}>음용정보</MenuItem>
-          <MenuItem value={ComponentType.INDICATION}>한글 표시사항</MenuItem>
+          {Object.values(AVAILABLE_MENU_LIST)
+            .filter((menu) => !components.includes(menu))
+            .map((menu) => (
+              <MenuItem key={menu} value={menu}>
+                {mapMenuValueToMenuLabel(menu)}
+              </MenuItem>
+            ))}
         </Select>
-      </Grid>
-      <Spacer axis="horizontal" size={24} />
-      <Grid item xs={3}>
+        <Spacer axis="horizontal" size={24} />
         <Button
+          className={classes.button}
           startIcon={<AddCircleOutline />}
           variant="contained"
           disabled={!type}
@@ -99,14 +146,30 @@ const Register: FC = () => {
         >
           컴포넌트 추가
         </Button>
+        <Spacer axis="horizontal" size={24} />
+        <Button
+          className={classes.button}
+          startIcon={<AttachFile />}
+          variant="contained"
+          color="default"
+          disabled={!components?.length}
+          onClick={addHtmlFiles}
+        >
+          파일 추가
+        </Button>
+        <Spacer axis="horizontal" size={24} />
+        <Button
+          className={classes.button}
+          startIcon={<GetApp />}
+          variant="contained"
+          color="secondary"
+          disabled={!files?.length}
+          onClick={downloadFiles}
+        >
+          다운로드
+        </Button>
       </Grid>
-      <Grid item xs={3} justify="flex-end">
-        <CopyToClipboard text={resultHtmlString} onCopy={handleCopied}>
-          <Button variant="contained" color="secondary" onClick={handleExtract}>
-            HTML추출
-          </Button>
-        </CopyToClipboard>
-      </Grid>
+      <Spacer axis="vertical" size={24} />
       {!!components?.length && <DraggableOrderList items={components} />}
       <Grid item xs={12} style={{ marginTop: "24px" }}>
         <Grid container>
@@ -115,15 +178,6 @@ const Register: FC = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Dialog
-        open={copied}
-        onClose={() => setCopied(false)}
-        aria-labelledby="simple-modal-title"
-      >
-        <DialogTitle id="simple-modal-title">
-          HTML copy was successful.
-        </DialogTitle>
-      </Dialog>
     </Grid>
   );
 };

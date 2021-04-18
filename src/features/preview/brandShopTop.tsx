@@ -1,19 +1,19 @@
 import { useSelector } from "react-redux";
 import { RootState } from "src/features";
 
-const PairingFragment = () => {
+const BrandShopTopFragment = () => {
   const { title, subtitle, description, contents } = useSelector(
     (state: RootState) => ({
-      title: state.pairingSlice.title,
-      subtitle: state.pairingSlice.subtitle,
-      description: state.pairingSlice.description,
-      contents: state.pairingSlice.contents,
+      title: state.brandShopTopSlice.title,
+      subtitle: state.brandShopTopSlice.subtitle,
+      description: state.brandShopTopSlice.description,
+      contents: state.brandShopTopSlice.contents,
     })
   );
 
   return (
-    <section className="w-full flex flex-col items-center">
-      <article className="w-full px-4 py-10 max-w-screen-sm flex flex-col">
+    <section className="w-full flex flex-col items-start">
+      <article className="w-full px-4 py-5 max-w-screen-sm flex flex-col">
         <h4 className="font-bold text-2xl" style={{ color: "#282828" }}>
           {title}
         </h4>
@@ -67,13 +67,20 @@ const PairingFragment = () => {
                 >
                   {content.title}
                 </h6>
-                <span className="spacer vertical" style={{ height: "8px" }} />
-                <h6
-                  className="text-base leading-3"
-                  style={{ color: "#4d4d4d" }}
-                >
-                  {content.subtitle}
-                </h6>
+                {content.subtitle && (
+                  <>
+                    <span
+                      className="spacer vertical"
+                      style={{ height: "8px" }}
+                    />
+                    <h6
+                      className="text-base leading-3"
+                      style={{ color: "#4d4d4d" }}
+                    >
+                      {content.subtitle}
+                    </h6>
+                  </>
+                )}
               </a>
             ))}
           </div>
@@ -83,4 +90,4 @@ const PairingFragment = () => {
   );
 };
 
-export default PairingFragment;
+export default BrandShopTopFragment;

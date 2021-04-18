@@ -6,6 +6,8 @@ import mainSlice from "./form/main/mainSlice";
 import pairingSlice from "./form/pairing/pairingSlice";
 import varietiesSlice from "./form/varieties/varietiesSlice";
 import scentSlice from "./form/scent/scentSlice";
+import brandShopTopSlice from "./form/brandShopTop/brandShopTopSlice";
+import brandShopBottomSlice from "./form/brandShopBottom/brandShopBottomSlice";
 import appSlice from "./app/appSlice";
 
 /* Root Reducer */
@@ -16,6 +18,8 @@ const rootReducer = combineReducers({
   pairingSlice,
   varietiesSlice,
   scentSlice,
+  brandShopTopSlice,
+  brandShopBottomSlice,
   appSlice,
 });
 

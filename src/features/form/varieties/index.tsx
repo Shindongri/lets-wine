@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { SketchPicker } from "react-color";
+// import { SketchPicker } from "react-color";
 
 import {
   Grid,
   FormControl,
   TextField,
-  FormControlLabel,
+  // FormControlLabel,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -16,7 +16,7 @@ import {
   setTitle,
   setSubtitle,
   setDescription,
-  setBgColor,
+  // setBgColor,
 } from "./varietiesSlice";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,12 +33,11 @@ const Varieties: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const { title, subtitle, description, background_color } = useSelector(
+  const { title, subtitle, description } = useSelector(
     (state: RootState) => ({
       title: state.varietiesSlice.title,
       subtitle: state.varietiesSlice.subtitle,
       description: state.varietiesSlice.description,
-      background_color: state.varietiesSlice.background_color,
     })
   );
 
@@ -80,21 +79,21 @@ const Varieties: FC = () => {
           />
         </FormControl>
       </Grid>
-      <Spacer axis="vertical" size={12} />
-      <Grid item xs={12}>
-        <FormControlLabel
-          label="배경색"
-          labelPlacement="top"
-          control={
-            <div className={classes.sketchPickerWrapper}>
-              <SketchPicker
-                color={background_color}
-                onChangeComplete={(color) => dispatch(setBgColor(color.hex))}
-              />
-            </div>
-          }
-        />
-      </Grid>
+      {/*<Spacer axis="vertical" size={12} />*/}
+      {/*<Grid item xs={12}>*/}
+      {/*  <FormControlLabel*/}
+      {/*    label="배경색"*/}
+      {/*    labelPlacement="top"*/}
+      {/*    control={*/}
+      {/*      <div className={classes.sketchPickerWrapper}>*/}
+      {/*        <SketchPicker*/}
+      {/*          color={background_color}*/}
+      {/*          onChangeComplete={(color) => dispatch(setBgColor(color.hex))}*/}
+      {/*        />*/}
+      {/*      </div>*/}
+      {/*    }*/}
+      {/*  />*/}
+      {/*</Grid>*/}
     </Grid>
   );
 };

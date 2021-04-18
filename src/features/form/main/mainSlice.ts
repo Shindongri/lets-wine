@@ -34,6 +34,9 @@ const mainSlice = createSlice({
   name: "main",
   initialState,
   reducers: {
+    clear(state) {
+      state = initialState;
+    },
     setMainImageUrl(state, action) {
       state.main_image_url = action.payload;
     },

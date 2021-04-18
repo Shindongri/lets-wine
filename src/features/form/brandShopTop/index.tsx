@@ -17,14 +17,15 @@ import Spacer from "src/components/Spacer";
 import { RootState } from "src/features";
 import {
   setTitle,
-  setDescription,
+  setLinkUrl,
+  setSubtitle,
   addContent,
-  removeContent,
   setContentTitle,
   setContentSubtitle,
   setContentImageUrl,
   setContentLinkUrl,
-} from "./pairingSlice";
+  removeContent,
+} from "./brandShopTopSlice";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -35,15 +36,18 @@ const useStyles = makeStyles((theme) => ({
 
 const MAX_CONTENTS = 10;
 
-const Pairing: FC = () => {
+const BrandShopTop: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const { title, contents, description } = useSelector((state: RootState) => ({
-    title: state.pairingSlice.title,
-      description: state.pairingSlice.description,
-    contents: state.pairingSlice.contents,
-  }));
+  const { title, link_url, contents, subtitle } = useSelector(
+    (state: RootState) => ({
+      title: state.brandShopTopSlice.title,
+      link_url: state.brandShopTopSlice.link_url,
+      subtitle: state.brandShopTopSlice.subtitle,
+      contents: state.brandShopTopSlice.contents,
+    })
+  );
 
   return (
     <Grid container className={classes.root}>
@@ -53,20 +57,28 @@ const Pairing: FC = () => {
             label="제목"
             value={title}
             style={{ minWidth: "240px" }}
-            onChange={({ target: { value } }) =>
-              dispatch(setTitle(value))
-            }
+            onChange={({ target: { value } }) => dispatch(setTitle(value))}
           />
         </FormControl>
       </Grid>
+      <Spacer axis="vertical" size={12} />
+      <FormControl className={classes.formControl}>
+        <TextField
+          label="링크 URL"
+          value={link_url}
+          placeholder="https://"
+          style={{ minWidth: "240px" }}
+          onChange={({ target: { value } }) => dispatch(setLinkUrl(value))}
+        />
+      </FormControl>
       <Spacer axis="vertical" size={12} />
       <Grid item xs={12}>
         <FormControl className={classes.formControl}>
           <TextField
             label="설명"
-            value={description}
+            value={subtitle}
             style={{ minWidth: "240px" }}
-            onChange={({ target: { value } }) => dispatch(setDescription(value))}
+            onChange={({ target: { value } }) => dispatch(setSubtitle(value))}
           />
         </FormControl>
       </Grid>
@@ -190,4 +202,4 @@ const Pairing: FC = () => {
   );
 };
 
-export default Pairing;
+export default BrandShopTop;

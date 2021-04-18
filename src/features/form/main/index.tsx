@@ -1,11 +1,9 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { AddCircle, Delete } from "@material-ui/icons";
 import {
   TextField,
-  FormControlLabel,
-  Switch,
   FormGroup,
   IconButton,
   FormControl,
@@ -18,9 +16,6 @@ import Spacer from "src/components/Spacer";
 import { RootState } from "src/features";
 import {
   setMainImageUrl,
-  setShortcutTitle,
-  setShortcutDescription,
-  setShortcutLinkUrl,
   addContent,
   removeContent,
   setContentTitle,
@@ -36,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MAX_CONTENTS = 4;
+const MAX_CONTENTS = 10;
 
-const Index: FC = () => {
+const Main: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { mainImageUrl, shortcut, contents } = useSelector(
@@ -47,10 +42,6 @@ const Index: FC = () => {
       shortcut: state.mainSlice.shortcut,
       contents: state.mainSlice.contents,
     })
-  );
-
-  const [hasShortcut, setHasShortCut] = useState<boolean>(
-    !!(shortcut.title || shortcut.link_url || shortcut.description)
   );
 
   return (
@@ -68,57 +59,6 @@ const Index: FC = () => {
           />
         </FormControl>
       </Grid>
-      <Spacer axis="vertical" size={24} />
-      <Grid item xs={12}>
-        <FormControlLabel
-          control={
-            <Switch
-              name="Y"
-              checked={hasShortcut}
-              onChange={(e) => setHasShortCut(e.target.checked)}
-            />
-          }
-          label="브랜드샵 바로가기"
-        />
-      </Grid>
-      <Spacer axis="vertical" size={12} />
-      {hasShortcut && (
-        <Grid item xs={12}>
-          <FormGroup>
-            <FormControl className={classes.formControl}>
-              <TextField
-                label="브랜드샵 바로가기 제목"
-                style={{ minWidth: "240px" }}
-                value={shortcut.title}
-                onChange={({ target: { value } }) =>
-                  dispatch(setShortcutTitle(value as string))
-                }
-              />
-            </FormControl>
-            <FormControl className={classes.formControl}>
-              <TextField
-                label="브랜드샵 바로가기 설명"
-                style={{ minWidth: "240px" }}
-                value={shortcut.description}
-                onChange={({ target: { value } }) =>
-                  dispatch(setShortcutDescription(value as string))
-                }
-              />
-            </FormControl>
-            <FormControl className={classes.formControl}>
-              <TextField
-                label="브랜드샵 바로가기 URL"
-                placeholder="https://"
-                style={{ minWidth: "240px" }}
-                value={shortcut.link_url}
-                onChange={({ target: { value } }) =>
-                  dispatch(setShortcutLinkUrl(value as string))
-                }
-              />
-            </FormControl>
-          </FormGroup>
-        </Grid>
-      )}
       <Spacer axis="vertical" size={24} />
       <Grid item xs={12}>
         <FormControl
@@ -149,7 +89,7 @@ const Index: FC = () => {
       <Spacer axis="vertical" size={12} />
       <Grid item xs={12}>
         {contents.map((content, idx) => (
-          <Grid container alignItems="center">
+          <Grid key={idx} container alignItems="center">
             <Grid item xs={2}>
               <Typography noWrap component="small">{`콘텐츠 ${
                 idx + 1
@@ -234,4 +174,4 @@ const Index: FC = () => {
   );
 };
 
-export default Index;
+export default Main;
