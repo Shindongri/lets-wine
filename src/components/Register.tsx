@@ -113,7 +113,7 @@ const Register: FC = () => {
           <GridList cellHeight={200} spacing={1} className={classes.gridList}>
             {thumbnailList.map((thumbnail) => (
               <GridListTile key={thumbnail}>
-                <img className="h-full object-cover" src={thumbnail} />
+                <img className="h-full object-cover" src={thumbnail} alt="" />
               </GridListTile>
             ))}
           </GridList>
