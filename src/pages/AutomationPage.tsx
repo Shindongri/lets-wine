@@ -3,7 +3,7 @@ import { Button, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { mapCsvToJson } from "src/utils/converter";
-import data from "src/test.json";
+import data from "src/ddd.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {

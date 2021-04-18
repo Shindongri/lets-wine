@@ -14,5 +14,7 @@ const reshape = (item: { [key: string]: any }) => {
 };
 
 export const mapCsvToJson = (items: Array<{ [key: string]: any }>) => {
+  const properties = Object.values(items[0]);
+
   return map((item: { [key: string]: any }) => reshape(item))(items);
 };

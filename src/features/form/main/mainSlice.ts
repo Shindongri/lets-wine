@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface Shortcut {
-  title: string;
-  description: string;
-  link_url: string;
-}
-
 export interface Content {
   key: number;
   title: string;
@@ -16,17 +10,11 @@ export interface Content {
 
 export interface MainSliceState {
   main_image_url: string;
-  shortcut: Shortcut;
   contents: Array<Content>;
 }
 
 const initialState = {
   main_image_url: "",
-  shortcut: {
-    title: "",
-    description: "",
-    link_url: "",
-  },
   contents: [],
 } as MainSliceState;
 
@@ -39,15 +27,6 @@ const mainSlice = createSlice({
     },
     setMainImageUrl(state, action) {
       state.main_image_url = action.payload;
-    },
-    setShortcutTitle(state, action) {
-      state.shortcut.title = action.payload;
-    },
-    setShortcutDescription(state, action) {
-      state.shortcut.description = action.payload;
-    },
-    setShortcutLinkUrl(state, action) {
-      state.shortcut.link_url = action.payload;
     },
     addContent(state, action: PayloadAction<Content>) {
       state.contents.push(action.payload);
@@ -82,9 +61,6 @@ const mainSlice = createSlice({
 
 export const {
   setMainImageUrl,
-  setShortcutTitle,
-  setShortcutDescription,
-  setShortcutLinkUrl,
   addContent,
   removeContent,
   setContentTitle,

@@ -36,10 +36,9 @@ const MAX_CONTENTS = 10;
 const Main: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { mainImageUrl, shortcut, contents } = useSelector(
+  const { mainImageUrl, contents } = useSelector(
     (state: RootState) => ({
       mainImageUrl: state.mainSlice.main_image_url,
-      shortcut: state.mainSlice.shortcut,
       contents: state.mainSlice.contents,
     })
   );

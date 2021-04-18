@@ -20,6 +20,7 @@ const AdultFragment: FC = () => {
         <img
           className="absolute w-40 right-5 bottom-0"
           src="http://wineplz.cafe24.com/web/upload/img/pro_ok3.svg"
+          alt=""
         />
       </div>
       <div
@@ -44,6 +45,7 @@ const AdultFragment: FC = () => {
         <img
           className="absolute w-24 right-8 bottom-0"
           src="http://wineplz.cafe24.com/web/upload/img/pro_go3.svg"
+          alt=""
         />
       </div>
       <div
@@ -54,6 +56,7 @@ const AdultFragment: FC = () => {
           <img
             className="w-5 h-5"
             src="http://wineplz.cafe24.com/web/upload/img/19con.svg"
+            alt=""
           />
           <h3 className="text-base font-bold p-2">
             주류의 통신판매에 관한 명령 위임 고시

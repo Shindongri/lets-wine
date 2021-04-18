@@ -19,7 +19,6 @@ import {
   setTitle,
   setLinkUrl,
   setSubtitle,
-  setDescription,
   addContent,
   setContentTitle,
   setContentSubtitle,
