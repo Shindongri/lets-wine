@@ -9,7 +9,12 @@ import {
   GridListTile,
   Select,
 } from "@material-ui/core";
-import { AddCircleOutline, AttachFile, GetApp } from "@material-ui/icons";
+import {
+  AddCircleOutline,
+  AttachFile,
+  GetApp,
+  Remove,
+} from "@material-ui/icons";
 
 import { AVAILABLE_MENU_LIST } from "../types";
 
@@ -106,8 +111,26 @@ const Register: FC = () => {
     await dispatch(addThumbnail(mainImageUrl));
   };
 
+  const remove = () => {
+    try {
+      localStorage.removeItem("persist:lets-wine");
+    } catch (e) {}
+  };
+
   return (
     <Grid container alignItems="center" style={{ width: "100%" }}>
+      <Grid item xs={12}>
+        <Button
+          className={classes.button}
+          startIcon={<Remove />}
+          variant="contained"
+          color="secondary"
+          onClick={remove}
+        >
+          모두 삭제
+        </Button>
+        <Spacer axis="vertical" size={24} />
+      </Grid>
       {!!thumbnailList?.length && (
         <Grid item xs={12} className={classes.root}>
           <GridList cellHeight={200} spacing={1} className={classes.gridList}>
@@ -135,18 +158,18 @@ const Register: FC = () => {
               </MenuItem>
             ))}
         </Select>
-        <Spacer axis="horizontal" size={24} />
+        <Spacer axis="horizontal" size={12} />
         <Button
           className={classes.button}
           startIcon={<AddCircleOutline />}
           variant="contained"
           disabled={!type}
-          color="primary"
+          color="default"
           onClick={() => handleClick(type)}
         >
           컴포넌트 추가
         </Button>
-        <Spacer axis="horizontal" size={24} />
+        <Spacer axis="horizontal" size={12} />
         <Button
           className={classes.button}
           startIcon={<AttachFile />}
@@ -157,12 +180,12 @@ const Register: FC = () => {
         >
           파일 추가
         </Button>
-        <Spacer axis="horizontal" size={24} />
+        <Spacer axis="horizontal" size={12} />
         <Button
           className={classes.button}
           startIcon={<GetApp />}
           variant="contained"
-          color="secondary"
+          color="primary"
           disabled={!files?.length}
           onClick={downloadFiles}
         >

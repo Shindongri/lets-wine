@@ -33,13 +33,11 @@ const Varieties: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const { title, subtitle, description } = useSelector(
-    (state: RootState) => ({
-      title: state.varietiesSlice.title,
-      subtitle: state.varietiesSlice.subtitle,
-      description: state.varietiesSlice.description,
-    })
-  );
+  const { title, subtitle, description } = useSelector((state: RootState) => ({
+    title: state.varietiesSlice.title,
+    subtitle: state.varietiesSlice.subtitle,
+    description: state.varietiesSlice.description,
+  }));
 
   return (
     <Grid container className={classes.root}>

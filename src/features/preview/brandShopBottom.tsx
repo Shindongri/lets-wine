@@ -13,24 +13,62 @@ const BrandShopBottomFragment = () => {
   );
 
   return (
-    <section className="w-full flex flex-col items-start">
-      <article className="w-full px-4 py-10 max-w-screen-sm flex flex-col">
-        <h4 className="font-bold text-2xl" style={{ color: "#282828" }}>
+    <section
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+      }}
+    >
+      <article
+        style={{
+          width: "100%",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          paddingTop: "2.5rem",
+          paddingBottom: "2.5rem",
+          maxWidth: "640px",
+          display: "flex",
+          flexDirection: "column",
+          boxSizing: "border-box",
+        }}
+      >
+        <h4
+          style={{
+            fontSize: "1.5rem",
+            lineHeight: "2rem",
+            fontWeight: "bold",
+            color: "#282828",
+          }}
+        >
           {title}
         </h4>
-        <span className="spacer vertical" style={{ height: "8px" }} />
+        <div style={{ width: "1px", height: "8px", display: "block" }} />
         {subtitle && link_url && (
-          <a href={link_url}>
-            <h6 className="text-xl" style={{ color: "#282828" }}>
+          <a href={link_url} style={{ textDecoration: "none" }}>
+            <h6
+              style={{
+                fontSize: "1.25rem",
+                lineHeight: "1.75rem",
+                color: "#282828",
+              }}
+            >
               {subtitle}
             </h6>
-            <span className="spacer vertical" style={{ height: "30px" }} />
+            <div style={{ width: "1px", height: "30px", display: "block" }} />
           </a>
         )}
         {!!contents?.length && (
           <div
-            className="flex flex-nowrap overflow-x-auto overflow-y-hidden m-0 p-0 pb-4"
             style={{
+              display: "flex",
+              flexWrap: "nowrap",
+              overflowX: "auto",
+              overflowY: "hidden",
+              margin: 0,
+              padding: 0,
+              paddingBottom: "1rem",
               scrollbarWidth: "none",
               msOverflowStyle: "none",
             }}
@@ -38,8 +76,12 @@ const BrandShopBottomFragment = () => {
             {contents.map((content, idx) => (
               <a
                 key={idx}
-                className="block"
-                style={{ flex: "0 0 auto", marginRight: "10px" }}
+                style={{
+                  flex: "0 0 auto",
+                  marginRight: "10px",
+                  display: "block",
+                  textDecoration: "none",
+                }}
                 href={content.link_url}
                 target="_blank"
                 rel="noreferrer"
@@ -53,17 +95,23 @@ const BrandShopBottomFragment = () => {
                   src={content.image_url}
                   alt=""
                 />
-                <span className="spacer vertical" style={{ height: "18px" }} />
                 <h6
-                  className="text-base leading-4"
-                  style={{ color: "#282828" }}
+                  style={{
+                    fontSize: "1rem",
+                    lineHeight: "1rem",
+                    color: "#282828",
+                    marginTop: "18px",
+                  }}
                 >
                   {content.title}
                 </h6>
-                <span className="spacer vertical" style={{ height: "8px" }} />
                 <h6
-                  className="text-base leading-3"
-                  style={{ color: "#4d4d4d" }}
+                  style={{
+                    fontSize: "1rem",
+                    color: "#4d4d4d",
+                    marginTop: "8px",
+                    lineHeight: ".75rem",
+                  }}
                 >
                   {content.subtitle}
                 </h6>

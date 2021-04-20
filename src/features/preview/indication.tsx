@@ -3,45 +3,97 @@ import { useSelector } from "react-redux";
 import { RootState } from "src/features";
 
 const IndicationFragment = () => {
-  const {
-    title,
-    subtitle,
-    description,
-    contents,
-    imageUrl,
-  } = useSelector((state: RootState) => ({
-    title: state.indicationSlice.title,
-    subtitle: state.indicationSlice.subtitle,
-    description: state.indicationSlice.description,
-    contents: state.indicationSlice.contents,
-    imageUrl: state.indicationSlice.image_url,
-  }));
+  const { title, subtitle, description, contents, imageUrl } = useSelector(
+    (state: RootState) => ({
+      title: state.indicationSlice.title,
+      subtitle: state.indicationSlice.subtitle,
+      description: state.indicationSlice.description,
+      contents: state.indicationSlice.contents,
+      imageUrl: state.indicationSlice.image_url,
+    })
+  );
 
   return (
-    <footer className="w-full flex flex-col items-center">
-      <div className="w-full px-4 py-5 max-w-screen-sm">
+    <footer
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          paddingTop: "1.25rem",
+          paddingBottom: "1.25rem",
+          maxWidth: "640px",
+          boxSizing: "border-box",
+        }}
+      >
         {imageUrl ? (
-          <img className="w-full object-contain" src={imageUrl} alt="" />
+          <img
+            style={{ width: "100%", objectFit: "contain" }}
+            src={imageUrl}
+            alt=""
+          />
         ) : (
           <>
-            <h4 className="text-sm font-bold" style={{ color: "#282828" }}>
+            <h4
+              style={{
+                fontWeight: "bold",
+                fontSize: "0.875rem",
+                lineHeight: "1.25rem",
+                color: "#282828",
+              }}
+            >
               {title}
             </h4>
-            <h4 className="text-sm" style={{ color: "#282828" }}>
+            <h4
+              style={{
+                color: "#282828",
+                fontSize: "0.875rem",
+                lineHeight: "1.25rem",
+              }}
+            >
               {subtitle}
             </h4>
-            <span className="spacer vertical" style={{ height: "24px" }} />
-            <h6 className="text-xs font-bold" style={{ color: "#282828" }}>
+            <div style={{ display: "block", width: "1px", height: "24px" }} />
+            <h6
+              style={{
+                fontWeight: "bold",
+                fontSize: "0.75rem",
+                lineHeight: "1rem",
+                color: "#282828",
+              }}
+            >
               {description}
             </h6>
-            <span className="spacer vertical" style={{ height: "12px" }} />
+            <span style={{ width: "1px", height: "12px", display: "block" }} />
             <dl>
-              {contents.map(content => (
+              {contents.map((content) => (
                 <Fragment key={content.key}>
-                  <dt className="block float-left font-bold text-xs leading-5">
+                  <dt
+                    style={{
+                      display: "block",
+                      float: "left",
+                      fontWeight: "bold",
+                      fontSize: "0.75rem",
+                      lineHeight: "1.25rem",
+                    }}
+                  >
                     {content.label}:&nbsp;
                   </dt>
-                  <dd className="text-xs leading-5">{content.value}</dd>
+                  <dd
+                    style={{
+                      fontSize: "0.75rem",
+                      lineHeight: "1.25rem",
+                    }}
+                  >
+                    {content.value}
+                  </dd>
                 </Fragment>
               ))}
             </dl>

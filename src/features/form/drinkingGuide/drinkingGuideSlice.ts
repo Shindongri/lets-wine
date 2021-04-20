@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Characteristics {
   body: number;
@@ -22,6 +22,10 @@ interface DrinkingGuideSliceState {
 const initialState = {
   glass: 3,
   decanting: true,
+  temperature: {
+    min: 7,
+    max: 13,
+  },
   characteristics: {
     body: 1,
     acidic: 2,
@@ -38,14 +42,16 @@ const drinkingGuideSlice = createSlice({
       state = initialState;
     },
     setGlass(state, action) {
-      const glass = action.payload;
+      state.glass = action.payload;
+    },
+    setTemperature(state, action: PayloadAction<Temperature>) {
+      const { min, max } = action.payload;
 
-      state.glass = glass;
+      state.temperature.min = min;
+      state.temperature.max = max;
     },
     setDecanting(state, action) {
-      const decanting = action.payload;
-
-      state.decanting = decanting;
+      state.decanting = action.payload;
     },
     setCharacteristicBody(state, action) {
       state.characteristics.body = action.payload;
@@ -65,6 +71,7 @@ const drinkingGuideSlice = createSlice({
 export const {
   setGlass,
   setDecanting,
+  setTemperature,
   setCharacteristicBody,
   setCharacteristicAcidic,
   setCharacteristicTannic,

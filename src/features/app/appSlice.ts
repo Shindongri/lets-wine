@@ -33,7 +33,7 @@ const appSlice = createSlice({
     },
     addThumbnail(state, action) {
       state.thumbnailList.push(action.payload);
-    }
+    },
   },
 });
 
@@ -42,7 +42,7 @@ export const {
   removeComponent,
   setComponents,
   addFiles,
-  addThumbnail
+  addThumbnail,
 } = appSlice.actions;
 
 export default appSlice.reducer;

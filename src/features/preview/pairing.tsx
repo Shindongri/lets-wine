@@ -12,32 +12,72 @@ const PairingFragment = () => {
   );
 
   return (
-    <section className="w-full flex flex-col items-center">
-      <article className="w-full px-4 py-10 max-w-screen-sm flex flex-col">
-        <h4 className="font-bold text-2xl" style={{ color: "#282828" }}>
+    <section
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <article
+        style={{
+          width: "100%",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          paddingTop: "2.5rem",
+          paddingBottom: "2.5rem",
+          maxWidth: "640px",
+          display: "flex",
+          flexDirection: "column",
+          boxSizing: "border-box",
+        }}
+      >
+        <h4
+          style={{
+            color: "#282828",
+            fontSize: "1.5rem",
+            lineHeight: "2rem",
+            fontWeight: "bold",
+          }}
+        >
           {title}
         </h4>
-        <span className="spacer vertical" style={{ height: "8px" }} />
+        <div style={{ width: "1px", display: "block", height: "8px" }} />
         {subtitle && (
           <>
-            <h6 className="text-2xl" style={{ color: "#282828" }}>
+            <h6
+              style={{
+                fontSize: "1.5rem",
+                lineHeight: "2rem",
+                color: "#282828",
+              }}
+            >
               {subtitle}
             </h6>
-            <span className="spacer vertical" style={{ height: "30px" }} />
+            <div style={{ width: "1px", display: "block", height: "30px" }} />
           </>
         )}
         {description && (
           <>
-            <p className="text-base leading-4" style={{ color: "#4d4d4d" }}>
+            <p
+              style={{ fontSize: "1rem", lineHeight: "1rem", color: "#4d4d4d" }}
+            >
               {description}
             </p>
-            <span className="spacer vertical" style={{ height: "30px" }} />
+            <div style={{ width: "1px", display: "block", height: "30px" }} />
           </>
         )}
         {!!contents?.length && (
           <div
-            className="flex flex-nowrap overflow-x-auto overflow-y-hidden m-0 p-0 pb-4"
             style={{
+              display: "flex",
+              flexWrap: "nowrap",
+              overflowX: "auto",
+              overflowY: "hidden",
+              margin: 0,
+              padding: 0,
+              paddingBottom: "1rem",
               scrollbarWidth: "none",
               msOverflowStyle: "none",
             }}
@@ -45,32 +85,48 @@ const PairingFragment = () => {
             {contents.map((content, idx) => (
               <a
                 key={idx}
-                className="block"
-                style={{ flex: "0 0 auto", marginRight: "10px" }}
+                style={{
+                  display: "block",
+                  flex: "0 0 auto",
+                  marginRight: "10px",
+                  textDecoration: "none",
+                }}
                 href={content.link_url}
                 target="_blank"
                 rel="noreferrer"
               >
-                <img
-                  style={{
-                    width: "144px",
-                    height: "173px",
-                    objectFit: "contain",
-                  }}
-                  src={content.image_url}
-                  alt=""
+                {content.image_url && (
+                  <img
+                    style={{
+                      width: "144px",
+                      height: "173px",
+                      objectFit: "contain",
+                    }}
+                    src={content.image_url}
+                    alt=""
+                  />
+                )}
+                <div
+                  style={{ width: "1px", display: "block", height: "18px" }}
                 />
-                <span className="spacer vertical" style={{ height: "18px" }} />
                 <h6
-                  className="text-base leading-4"
-                  style={{ color: "#282828" }}
+                  style={{
+                    fontSize: "1rem",
+                    lineHeight: "1rem",
+                    color: "#282828",
+                  }}
                 >
                   {content.title}
                 </h6>
-                <span className="spacer vertical" style={{ height: "8px" }} />
+                <div
+                  style={{ width: "1px", display: "block", height: "8px" }}
+                />
                 <h6
-                  className="text-base leading-3"
-                  style={{ color: "#4d4d4d" }}
+                  style={{
+                    color: "#4d4d4d",
+                    fontSize: "1rem",
+                    lineHeight: ".75rem",
+                  }}
                 >
                   {content.subtitle}
                 </h6>

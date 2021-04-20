@@ -57,12 +57,11 @@ const Form: FC = () => {
                 value={type}
                 onChange={handleChange}
               >
-                {Object.values({...AVAILABLE_MENU_LIST})
-                  .map((menu) => (
-                    <MenuItem key={menu} value={menu}>
-                      {mapMenuValueToMenuLabel(menu)}
-                    </MenuItem>
-                  ))}
+                {Object.values({ ...AVAILABLE_MENU_LIST }).map((menu) => (
+                  <MenuItem key={menu} value={menu}>
+                    {mapMenuValueToMenuLabel(menu)}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Grid>

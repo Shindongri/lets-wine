@@ -8,8 +8,8 @@ export interface ScentSliceState {
 }
 
 const initialState = {
-  title: "",
-  subtitle: "",
+  title: "Scent",
+  subtitle: "풍미",
   description: "",
   images: [],
 } as ScentSliceState;

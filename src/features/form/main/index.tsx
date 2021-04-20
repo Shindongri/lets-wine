@@ -36,12 +36,10 @@ const MAX_CONTENTS = 10;
 const Main: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { mainImageUrl, contents } = useSelector(
-    (state: RootState) => ({
-      mainImageUrl: state.mainSlice.main_image_url,
-      contents: state.mainSlice.contents,
-    })
-  );
+  const { mainImageUrl, contents } = useSelector((state: RootState) => ({
+    mainImageUrl: state.mainSlice.main_image_url,
+    contents: state.mainSlice.contents,
+  }));
 
   return (
     <Grid container className={classes.root}>

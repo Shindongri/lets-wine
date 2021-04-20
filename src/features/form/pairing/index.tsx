@@ -41,7 +41,7 @@ const Pairing: FC = () => {
 
   const { title, contents, description } = useSelector((state: RootState) => ({
     title: state.pairingSlice.title,
-      description: state.pairingSlice.description,
+    description: state.pairingSlice.description,
     contents: state.pairingSlice.contents,
   }));
 
@@ -53,9 +53,7 @@ const Pairing: FC = () => {
             label="제목"
             value={title}
             style={{ minWidth: "240px" }}
-            onChange={({ target: { value } }) =>
-              dispatch(setTitle(value))
-            }
+            onChange={({ target: { value } }) => dispatch(setTitle(value))}
           />
         </FormControl>
       </Grid>
@@ -66,7 +64,9 @@ const Pairing: FC = () => {
             label="설명"
             value={description}
             style={{ minWidth: "240px" }}
-            onChange={({ target: { value } }) => dispatch(setDescription(value))}
+            onChange={({ target: { value } }) =>
+              dispatch(setDescription(value))
+            }
           />
         </FormControl>
       </Grid>
