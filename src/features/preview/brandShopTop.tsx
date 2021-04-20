@@ -34,7 +34,7 @@ const BrandShopTopFragment = () => {
           boxSizing: "border-box",
         }}
       >
-        <a style={{ textDecoration: "none" }} href={link_url} target="_blank">
+        <a style={{ textDecoration: "none" }} href={link_url} target="_blank" rel="noreferrer">
           <h4
             style={{
               fontWeight: "bold",

@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Button, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { AVAILABLE_MENU_LIST } from "../types";
 
 import { mapCsvToJson } from "src/utils/converter";
 import data from "src/ddd.json";
