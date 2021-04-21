@@ -95,7 +95,7 @@ const AdultFragment: FC = () => {
           }}
         >
           <p style={{ fontSize: "12px", margin: "0px", padding: "0px" }}>
-            회원가입시
+            회원가입시{' '}
             <b style={{ fontWeight: "bold" }}>성인인증을 하지 않았다면 -</b>
           </p>
           <a

@@ -100,24 +100,24 @@ const SmartOrderFragment: FC = () => {
                 및 대리 수령 시 서비스 이용이 제한될 수 있습니다.
               </li>
             </ul>
-            <p style={{ fontWeight: 600, marginTop: "16px" }}>
-              4. 과음 경고 문구
-            </p>
-            <ul
-              style={{
-                color: "rgb(107, 114, 128)",
-                listStyleType: '"·"',
-                marginTop: "8px",
-                lineHeight: "1rem",
-                fontSize: "12px",
-                marginLeft: "14px",
-              }}
-            >
-              <li>
-                지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중
-                음주는 기형아 출생 위험을 높입니다.
-              </li>
-            </ul>
+            {/*<p style={{ fontWeight: 600, marginTop: "16px" }}>*/}
+            {/*  4. 과음 경고 문구*/}
+            {/*</p>*/}
+            {/*<ul*/}
+            {/*  style={{*/}
+            {/*    color: "rgb(107, 114, 128)",*/}
+            {/*    listStyleType: '"·"',*/}
+            {/*    marginTop: "8px",*/}
+            {/*    lineHeight: "1rem",*/}
+            {/*    fontSize: "12px",*/}
+            {/*    marginLeft: "14px",*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  <li>*/}
+            {/*    지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중*/}
+            {/*    음주는 기형아 출생 위험을 높입니다.*/}
+            {/*  </li>*/}
+            {/*</ul>*/}
           </div>
         </div>
       </article>
