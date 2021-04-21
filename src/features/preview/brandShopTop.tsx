@@ -34,7 +34,12 @@ const BrandShopTopFragment = () => {
           boxSizing: "border-box",
         }}
       >
-        <a style={{ textDecoration: "none" }} href={link_url} target="_blank" rel="noreferrer">
+        <a
+          style={{ textDecoration: "none" }}
+          href={link_url}
+          target="_blank"
+          rel="noreferrer"
+        >
           <h4
             style={{
               fontWeight: "bold",
@@ -98,15 +103,24 @@ const BrandShopTopFragment = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img
+                <div
                   style={{
                     width: "144px",
                     height: "173px",
                     objectFit: "contain",
                   }}
-                  src={content.image_url}
-                  alt=""
-                />
+                >
+                  <img
+                    style={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    src={content.image_url}
+                    alt=""
+                  />
+                </div>
+
                 <span
                   style={{ width: "1px", display: "block", height: "18px" }}
                 />

@@ -35,7 +35,11 @@ const IndicationFragment = () => {
       >
         {imageUrl ? (
           <img
-            style={{ width: "100%", objectFit: "contain" }}
+            style={{
+              objectFit: "contain",
+              width: "100%",
+              height: "100%",
+            }}
             src={imageUrl}
             alt=""
           />

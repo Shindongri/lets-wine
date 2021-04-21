@@ -73,11 +73,17 @@ const ScentFragment = () => {
         >
           {images.map((image, idx) => (
             <Fragment key={idx}>
-              <img
-                style={{ width: `calc((100% / ${images.length}) - 36px)` }}
-                src={image}
-                alt=""
-              />
+              <div style={{ width: `calc((100% / ${images.length}) - 36px)` }}>
+                <img
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={image}
+                  alt=""
+                />
+              </div>
             </Fragment>
           ))}
         </div>

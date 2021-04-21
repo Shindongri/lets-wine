@@ -61,12 +61,17 @@ const DrinkingGuideFragment = () => {
             {Number(glass) === 5 && "입구가 좁고 각이 있는 잔"}
           </h6>
           <span style={{ display: "block", width: "1px", height: "20px" }} />
-          <img
-            width={240}
-            height={72}
-            src={`http://wineplz.cafe24.com/web/upload/img/wineglass_${glass}s.svg`}
-            alt=""
-          />
+          <div style={{ width: "240px", height: "72px" }}>
+            <img
+              style={{
+                objectFit: "contain",
+                width: "100%",
+                height: "100%",
+              }}
+              src={`http://wineplz.cafe24.com/web/upload/img/wineglass_${glass}s.svg`}
+              alt=""
+            />
+          </div>
         </div>
         <span style={{ display: "block", width: "1px", height: "42px" }} />
         <div
@@ -97,13 +102,19 @@ const DrinkingGuideFragment = () => {
               {decanting ? "필요함" : "하지 않음"}
             </h6>
             <span style={{ display: "block", width: "1px", height: "20px" }} />
-            <img
-              height={72}
-              src={`http://wineplz.cafe24.com/web/upload/img/decanting${
-                decanting ? 1 : 2
-              }s.svg`}
-              alt=""
-            />
+            <div style={{ width: "72px", height: "72px" }}>
+              <img
+                style={{
+                  objectFit: "contain",
+                  width: "100%",
+                  height: "100%",
+                }}
+                src={`http://wineplz.cafe24.com/web/upload/img/decanting${
+                  decanting ? 1 : 2
+                }s.svg`}
+                alt=""
+              />
+            </div>
           </div>
           <div>
             <h4
@@ -127,11 +138,17 @@ const DrinkingGuideFragment = () => {
               {min}~{max}°C
             </h6>
             <span style={{ display: "block", width: "1px", height: "20px" }} />
-            <img
-              height={72}
-              src="http://wineplz.cafe24.com/web/upload/img/temp_s.svg"
-              alt=""
-            />
+            <div style={{ width: "72px", height: "72px" }}>
+              <img
+                style={{
+                  objectFit: "contain",
+                  width: "100%",
+                  height: "100%",
+                }}
+                src="http://wineplz.cafe24.com/web/upload/img/temp_s.svg"
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <span style={{ display: "block", width: "1px", height: "42px" }} />
@@ -158,15 +175,23 @@ const DrinkingGuideFragment = () => {
                 바디
               </span>
               <span style={{ width: "24px", height: "1px" }} />
-              <img
+              <div
                 style={{
                   gridColumn: "span 5 / span 5",
                   height: "1.5rem",
                   width: "75%",
                 }}
-                src={`http://wineplz.cafe24.com/web/upload/img/bar_${body}s.svg`}
-                alt=""
-              />
+              >
+                <img
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${body}s.svg`}
+                  alt=""
+                />
+              </div>
             </li>
             <span style={{ width: "1px", display: "block", height: "12px" }} />
             <li
@@ -183,15 +208,23 @@ const DrinkingGuideFragment = () => {
                 산미
               </span>
               <span style={{ width: "24px", height: "1px" }} />
-              <img
+              <div
                 style={{
                   gridColumn: "span 5 / span 5",
                   height: "1.5rem",
                   width: "75%",
                 }}
-                src={`http://wineplz.cafe24.com/web/upload/img/bar_${acidic}s.svg`}
-                alt=""
-              />
+              >
+                <img
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${acidic}s.svg`}
+                  alt=""
+                />
+              </div>
             </li>
             <span style={{ height: "12px", width: "1px", display: "block" }} />
             <li
@@ -210,15 +243,23 @@ const DrinkingGuideFragment = () => {
               <span
                 style={{ width: "24px", height: "1px", display: "block" }}
               />
-              <img
+              <div
                 style={{
                   gridColumn: "span 5 / span 5",
                   height: "1.5rem",
                   width: "75%",
                 }}
-                src={`http://wineplz.cafe24.com/web/upload/img/bar_${tannic}s.svg`}
-                alt=""
-              />
+              >
+                <img
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${tannic}s.svg`}
+                  alt=""
+                />
+              </div>
             </li>
             <div style={{ display: "block", width: "1px", height: "12px" }} />
             <li
@@ -235,15 +276,23 @@ const DrinkingGuideFragment = () => {
                 당도
               </span>
               <span style={{ width: "24px", height: "1px" }} />
-              <img
+              <div
                 style={{
                   gridColumn: "span 5 / span 5",
                   height: "1.5rem",
                   width: "75%",
                 }}
-                src={`http://wineplz.cafe24.com/web/upload/img/bar_${sweet}s.svg`}
-                alt=""
-              />
+              >
+                <img
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${sweet}s.svg`}
+                  alt=""
+                />
+              </div>
             </li>
           </ul>
         </div>

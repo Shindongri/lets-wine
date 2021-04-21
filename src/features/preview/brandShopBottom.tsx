@@ -86,15 +86,24 @@ const BrandShopBottomFragment = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img
+                <div
                   style={{
                     width: "144px",
                     height: "173px",
                     objectFit: "contain",
                   }}
-                  src={content.image_url}
-                  alt=""
-                />
+                >
+                  <img
+                    style={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    src={content.image_url}
+                    alt=""
+                  />
+                </div>
+
                 <h6
                   style={{
                     fontSize: "1rem",

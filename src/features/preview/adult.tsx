@@ -47,16 +47,24 @@ const AdultFragment: FC = () => {
             계속 이용하기
           </div>
         </div>
-        <img
+        <div
           style={{
             position: "absolute",
             width: "10rem",
             right: "1.25rem",
             bottom: 0,
           }}
-          src="http://wineplz.cafe24.com/web/upload/img/pro_ok3.svg"
-          alt=""
-        />
+        >
+          <img
+            style={{
+              objectFit: "contain",
+              width: "100%",
+              height: "100%",
+            }}
+            src="http://wineplz.cafe24.com/web/upload/img/pro_ok3.svg"
+            alt=""
+          />
+        </div>
       </div>
       <div
         style={{ width: "100%", height: "1px", backgroundColor: "#dadada" }}
@@ -89,7 +97,8 @@ const AdultFragment: FC = () => {
           }}
         >
           <p style={{ margin: 0, padding: 0 }}>
-            회원가입시 <b style={{ fontWeight: "bold" }}>성인인증을 하지 않았다면 -</b>
+            회원가입시{" "}
+            <b style={{ fontWeight: "bold" }}>성인인증을 하지 않았다면 -</b>
           </p>
           <a
             style={{
@@ -108,16 +117,24 @@ const AdultFragment: FC = () => {
             인증하러 가기
           </a>
         </div>
-        <img
+        <div
           style={{
             position: "absolute",
             width: "6rem",
             bottom: 0,
             right: "2rem",
           }}
-          src="http://wineplz.cafe24.com/web/upload/img/pro_go3.svg"
-          alt=""
-        />
+        >
+          <img
+            style={{
+              objectFit: "contain",
+              width: "100%",
+              height: "100%",
+            }}
+            src="http://wineplz.cafe24.com/web/upload/img/pro_go3.svg"
+            alt=""
+          />
+        </div>
       </div>
       <div
         style={{
@@ -131,14 +148,22 @@ const AdultFragment: FC = () => {
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <img
+          <div
             style={{
               width: "1.25rem",
               height: "1.25rem",
             }}
-            src="http://wineplz.cafe24.com/web/upload/img/19con.svg"
-            alt=""
-          />
+          >
+            <img
+              style={{
+                objectFit: "contain",
+                width: "100%",
+                height: "100%",
+              }}
+              src="http://wineplz.cafe24.com/web/upload/img/19con.svg"
+              alt=""
+            />
+          </div>
           <h3
             style={{
               fontSize: "1rem",

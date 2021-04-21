@@ -96,15 +96,22 @@ const PairingFragment = () => {
                 rel="noreferrer"
               >
                 {content.image_url && (
-                  <img
+                  <div
                     style={{
                       width: "144px",
                       height: "173px",
-                      objectFit: "contain",
                     }}
-                    src={content.image_url}
-                    alt=""
-                  />
+                  >
+                    <img
+                      style={{
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      src={content.image_url}
+                      alt=""
+                    />
+                  </div>
                 )}
                 <div
                   style={{ width: "1px", display: "block", height: "18px" }}
