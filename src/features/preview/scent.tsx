@@ -24,10 +24,7 @@ const ScentFragment = () => {
       <article
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "2.5rem",
-          paddingBottom: "2.5rem",
+          padding: "1.8rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}
@@ -44,36 +41,35 @@ const ScentFragment = () => {
         </h4>
         <h6
           style={{
-            fontSize: "1.25rem",
-            lineHeight: "1.75rem",
-            color: "#282828",
-            marginTop: "8px",
+            fontSize: "15px",
+            lineHeight: "0.2rem",
+            color: "rgb(40, 40, 40)",
+            marginTop: "5px",
           }}
         >
           {subtitle}
         </h6>
         <p
           style={{
-            fontSize: "1rem",
+            fontSize: "13px",
             lineHeight: "1.5rem",
-            color: "#4d4d4d",
-            marginTop: "30px",
+            color: "rgb(77, 77, 77)",
+            marginTop: "20px",
           }}
         >
           {description}
         </p>
         <div
           style={{
-            marginTop: "30px",
+            marginTop: "15px",
             width: "100%",
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
           }}
         >
           {images.map((image, idx) => (
             <Fragment key={idx}>
-              <div style={{ width: `calc((100% / ${images.length}) - 36px)` }}>
+              <div style={{ width: "46px", marginRight: "10px" }}>
                 <img
                   style={{
                     objectFit: "contain",

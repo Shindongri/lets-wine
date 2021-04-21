@@ -21,16 +21,13 @@ const DrinkingGuideFragment = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "#f1f1f1",
+        backgroundColor: "rgb(241, 241, 241)",
       }}
     >
       <article
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "2.5rem",
-          paddingBottom: "2.5rem",
+          padding: "2.5rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}
@@ -38,20 +35,20 @@ const DrinkingGuideFragment = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h4
             style={{
-              fontSize: "0.875rem",
+              fontSize: "13px",
               lineHeight: "1.25rem",
-              color: "#7f7f7f",
+              color: "rgb(127, 127, 127)",
             }}
           >
             와인잔
           </h4>
-          <span style={{ width: "1px", display: "block", height: "7px" }} />
+          <span style={{ width: "1px", display: "block", height: "3px" }} />
           <h6
             style={{
-              fontWeight: "bold",
-              fontSize: "0.875rem",
+              fontWeight: 500,
+              fontSize: "15px",
               lineHeight: "1.25rem",
-              color: "#282828",
+              color: "rgb(40, 40, 40)",
             }}
           >
             {Number(glass) === 1 && "기포가 유지되는 얇고 긴 잔"}
@@ -60,8 +57,8 @@ const DrinkingGuideFragment = () => {
             {Number(glass) === 4 && "크기가 크고 볼륨이 풍성한 잔"}
             {Number(glass) === 5 && "입구가 좁고 각이 있는 잔"}
           </h6>
-          <span style={{ display: "block", width: "1px", height: "20px" }} />
-          <div style={{ width: "240px", height: "72px" }}>
+          <span style={{ display: "block", width: "1px", height: "10px" }} />
+          <div style={{ width: "240px", height: "60px" }}>
             <img
               style={{
                 objectFit: "contain",
@@ -73,7 +70,7 @@ const DrinkingGuideFragment = () => {
             />
           </div>
         </div>
-        <span style={{ display: "block", width: "1px", height: "42px" }} />
+        <span style={{ display: "block", width: "1px", height: "25px" }} />
         <div
           style={{
             display: "grid",
@@ -83,26 +80,26 @@ const DrinkingGuideFragment = () => {
           <div>
             <h4
               style={{
-                fontSize: "0.875rem",
+                fontSize: "13px",
                 lineHeight: "1.25rem",
-                color: "#7f7f7f",
+                color: "rgb(127, 127, 127)",
               }}
             >
               디켄팅
             </h4>
-            <span style={{ display: "block", width: "1px", height: "7px" }} />
+            <span style={{ display: "block", width: "1px", height: "3px" }} />
             <h6
               style={{
-                fontWeight: "bold",
-                fontSize: "0.875rem",
+                fontWeight: 500,
+                fontSize: "15px",
                 lineHeight: "1.25rem",
-                color: "#282828",
+                color: "rgb(40, 40, 40)",
               }}
             >
               {decanting ? "필요함" : "하지 않음"}
             </h6>
-            <span style={{ display: "block", width: "1px", height: "20px" }} />
-            <div style={{ width: "72px", height: "72px" }}>
+            <span style={{ display: "block", width: "1px", height: "10px" }} />
+            <div style={{ width: "50px", height: "auto" }}>
               <img
                 style={{
                   objectFit: "contain",
@@ -119,26 +116,26 @@ const DrinkingGuideFragment = () => {
           <div>
             <h4
               style={{
-                fontSize: "0.875rem",
+                fontSize: "13px",
                 lineHeight: "1.25rem",
-                color: "#7f7f7f",
+                color: "rgb(127, 127, 127)",
               }}
             >
               적정 음용 온도
             </h4>
-            <span style={{ display: "block", width: "1px", height: "7px" }} />
+            <span style={{ display: "block", width: "1px", height: "3px" }} />
             <h6
               style={{
-                fontWeight: "bold",
-                fontSize: "0.875rem",
+                fontWeight: 500,
+                fontSize: "15px",
                 lineHeight: "1.25rem",
-                color: "#282828",
+                color: "rgb(40, 40, 40)",
               }}
             >
               {min}~{max}°C
             </h6>
-            <span style={{ display: "block", width: "1px", height: "20px" }} />
-            <div style={{ width: "72px", height: "72px" }}>
+            <span style={{ display: "block", width: "1px", height: "10px" }} />
+            <div style={{ width: "50px", height: "auto" }}>
               <img
                 style={{
                   objectFit: "contain",
@@ -151,7 +148,7 @@ const DrinkingGuideFragment = () => {
             </div>
           </div>
         </div>
-        <span style={{ display: "block", width: "1px", height: "42px" }} />
+        <span style={{ display: "block", width: "1px", height: "25px" }} />
         <div
           style={{ width: "100%", display: "flex", justifyContent: "start" }}
         >
@@ -167,7 +164,7 @@ const DrinkingGuideFragment = () => {
               <span
                 style={{
                   gridColumn: "span 2 / span 2",
-                  fontSize: "0.875rem",
+                  fontSize: "15px",
                   lineHeight: "1.25rem",
                   whiteSpace: "nowrap",
                 }}
@@ -178,8 +175,8 @@ const DrinkingGuideFragment = () => {
               <div
                 style={{
                   gridColumn: "span 5 / span 5",
-                  height: "1.5rem",
-                  width: "75%",
+                  height: "1.25rem",
+                  width: "70%",
                 }}
               >
                 <img
@@ -193,26 +190,28 @@ const DrinkingGuideFragment = () => {
                 />
               </div>
             </li>
-            <span style={{ width: "1px", display: "block", height: "12px" }} />
+            <span style={{ width: "1px", display: "block", height: "8px" }} />
             <li
               style={{ display: "flex", alignItems: "center", width: "100%" }}
             >
               <span
                 style={{
                   gridColumn: "span 2 / span 2",
-                  fontSize: "0.875rem",
+                  fontSize: "15px",
                   lineHeight: "1.25rem",
                   whiteSpace: "nowrap",
                 }}
               >
                 산미
               </span>
-              <span style={{ width: "24px", height: "1px" }} />
+              <span
+                style={{ width: "24px", height: "1px", display: "block" }}
+              />
               <div
                 style={{
                   gridColumn: "span 5 / span 5",
-                  height: "1.5rem",
-                  width: "75%",
+                  height: "1.25rem",
+                  width: "70%",
                 }}
               >
                 <img
@@ -226,14 +225,14 @@ const DrinkingGuideFragment = () => {
                 />
               </div>
             </li>
-            <span style={{ height: "12px", width: "1px", display: "block" }} />
+            <span style={{ height: "8px", width: "1px", display: "block" }} />
             <li
               style={{ display: "flex", alignItems: "center", width: "100%" }}
             >
               <span
                 style={{
                   gridColumn: "span 2 / span 2",
-                  fontSize: "0.875rem",
+                  fontSize: "15px",
                   lineHeight: "1.25rem",
                   whiteSpace: "nowrap",
                 }}
@@ -246,8 +245,8 @@ const DrinkingGuideFragment = () => {
               <div
                 style={{
                   gridColumn: "span 5 / span 5",
-                  height: "1.5rem",
-                  width: "75%",
+                  height: "1.25rem",
+                  width: "70%",
                 }}
               >
                 <img
@@ -261,26 +260,28 @@ const DrinkingGuideFragment = () => {
                 />
               </div>
             </li>
-            <div style={{ display: "block", width: "1px", height: "12px" }} />
+            <span style={{ height: "8px", width: "1px", display: "block" }} />
             <li
               style={{ display: "flex", alignItems: "center", width: "100%" }}
             >
               <span
                 style={{
                   gridColumn: "span 2 / span 2",
-                  fontSize: "0.875rem",
+                  fontSize: "15px",
                   lineHeight: "1.25rem",
                   whiteSpace: "nowrap",
                 }}
               >
                 당도
               </span>
-              <span style={{ width: "24px", height: "1px" }} />
+              <span
+                style={{ width: "24px", height: "1px", display: "block" }}
+              />
               <div
                 style={{
                   gridColumn: "span 5 / span 5",
-                  height: "1.5rem",
-                  width: "75%",
+                  height: "1.25rem",
+                  width: "70%",
                 }}
               >
                 <img

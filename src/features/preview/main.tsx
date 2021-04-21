@@ -25,34 +25,31 @@ const MainFragment = () => {
       <article
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "2.5rem",
-          paddingBottom: "2.5rem",
+          padding: "2rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}
       >
-        <dl style={{ margin: 0, padding: 0 }}>
+        <dl style={{ margin: "0px", padding: "0px" }}>
           {contents.map((content, idx) => {
             return (
               <Fragment key={idx}>
                 <dt
                   style={{
-                    fontSize: "1.5rem",
-                    lineHeight: "2rem",
+                    fontSize: "18px",
+                    lineHeight: "1.2rem",
                     fontWeight: "bold",
-                    color: "#282828",
+                    color: "rgb(40, 40, 40)",
                   }}
                 >
                   {content.title}
                 </dt>
-                <div style={{ width: "1px", height: "18px" }} />
+                <div style={{ width: "1px", height: "10px" }} />
                 <dd
                   style={{
-                    color: "#4d4d4d",
-                    fontSize: "1rem",
-                    lineHeight: "1.25rem",
+                    color: "rgb(77, 77, 77)",
+                    fontSize: "13px",
+                    lineHeight: "1rem",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -95,7 +92,7 @@ const MainFragment = () => {
                   )}
                 </dd>
                 {contents.length - 1 !== idx && (
-                  <div style={{ width: "1px", height: "42px" }} />
+                  <div style={{ width: "1px", height: "30px" }} />
                 )}
               </Fragment>
             );

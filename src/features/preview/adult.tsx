@@ -7,41 +7,38 @@ const AdultFragment: FC = () => {
         style={{
           backgroundColor: "#f1f1f1",
           width: "100%",
-          height: "8rem",
+          height: "5rem",
           fontSize: "1rem",
           lineHeight: 1.5,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
-          paddingTop: "1.25rem",
-          paddingBottom: "1.25rem",
+          padding: "10px 1.5rem",
           boxSizing: "border-box",
           position: "relative",
         }}
       >
         <div
           style={{
-            width: "40%",
+            width: "65%",
             height: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
           }}
         >
-          <p style={{ margin: 0, padding: 0 }}>
+          <p style={{ fontSize: "12px", margin: "0px", padding: "0px" }}>
             회원가입시 성인인증을 완료했다면 -
           </p>
           <div
             style={{
               display: "block",
               textAlign: "center",
-              paddingLeft: "1.5rem",
-              paddingRight: "1.5rem",
-              paddingTop: "0.625rem",
-              paddingBottom: "0.625rem",
-              border: "1px solid #dadada",
+              padding: "6px 10px",
+              border: "1px solid rgb(218, 218, 218)",
+              borderRadius: "30px",
+              fontSize: "12px",
+              width: "100px",
             }}
           >
             계속 이용하기
@@ -50,9 +47,9 @@ const AdultFragment: FC = () => {
         <div
           style={{
             position: "absolute",
-            width: "10rem",
+            width: "7rem",
             right: "1.25rem",
-            bottom: 0,
+            bottom: "-8px",
           }}
         >
           <img
@@ -67,50 +64,51 @@ const AdultFragment: FC = () => {
         </div>
       </div>
       <div
-        style={{ width: "100%", height: "1px", backgroundColor: "#dadada" }}
+        style={{
+          width: "100%",
+          height: "1px",
+          backgroundColor: "rgb(218, 218, 218)",
+        }}
       />
       <div
         style={{
           width: "100%",
-          height: "8rem",
+          height: "5rem",
           fontSize: "1rem",
           lineHeight: 1.5,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
-          paddingTop: "1.25rem",
-          paddingBottom: "1.25rem",
+          padding: "10px 1.5rem",
           boxSizing: "border-box",
           position: "relative",
-          backgroundColor: "#f1f1f1",
+          backgroundColor: "rgb(241, 241, 241)",
         }}
       >
         <div
           style={{
-            width: "40%",
+            width: "65%",
             height: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
           }}
         >
-          <p style={{ margin: 0, padding: 0 }}>
-            회원가입시{" "}
+          <p style={{ fontSize: "12px", margin: "0px", padding: "0px" }}>
+            회원가입시
             <b style={{ fontWeight: "bold" }}>성인인증을 하지 않았다면 -</b>
           </p>
           <a
             style={{
               display: "block",
               textAlign: "center",
-              paddingLeft: "1.5rem",
-              paddingRight: "1.5rem",
-              paddingTop: "0.625rem",
-              paddingBottom: "0.625rem",
-              color: "#fff",
+              padding: "6px 10px",
+              color: "rgb(255, 255, 255)",
               backgroundColor: "rgb(31, 41, 55)",
               textDecoration: "none",
+              borderRadius: "30px",
+              fontSize: "12px",
+              width: "100px",
             }}
             href="/"
           >
@@ -120,8 +118,8 @@ const AdultFragment: FC = () => {
         <div
           style={{
             position: "absolute",
-            width: "6rem",
-            bottom: 0,
+            width: "4rem",
+            bottom: "-8px",
             right: "2rem",
           }}
         >
@@ -139,19 +137,16 @@ const AdultFragment: FC = () => {
       <div
         style={{
           width: "100%",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
-          paddingTop: "1.25rem",
-          paddingBottom: "1.25rem",
+          padding: "10px 1.5rem",
           boxSizing: "border-box",
-          backgroundColor: "#f6f6f6",
+          backgroundColor: "rgb(246, 246, 246)",
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <div
             style={{
-              width: "1.25rem",
-              height: "1.25rem",
+              width: "15px",
+              height: "15px",
             }}
           >
             <img
@@ -166,10 +161,11 @@ const AdultFragment: FC = () => {
           </div>
           <h3
             style={{
-              fontSize: "1rem",
-              lineHeight: 1.5,
+              fontSize: "12px",
+              lineHeight: 1.2,
               fontWeight: "bold",
-              padding: "0.5rem",
+              padding: "0.3rem",
+              margin: "0px",
             }}
           >
             주류의 통신판매에 관한 명령 위임 고시
@@ -177,8 +173,8 @@ const AdultFragment: FC = () => {
         </div>
         <p
           style={{
-            fontSize: "0.875rem",
-            lineHeight: "1.25rem",
+            fontSize: "10px",
+            lineHeight: 1.3,
             wordBreak: "break-all",
           }}
         >

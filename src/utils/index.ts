@@ -36,6 +36,11 @@ export const insertResultToTemplate = (result: string) => `
       rel="stylesheet"
       type="text/css"
     />
+     <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <style>
       * {
         font-family: "Spoqa Han Sans Neo", "sans-serif";

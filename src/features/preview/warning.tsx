@@ -13,10 +13,7 @@ const WarningFragment: FC = () => {
       <article
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "1.25rem",
-          paddingBottom: "1.25rem",
+          padding: "1.25rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}
@@ -30,7 +27,7 @@ const WarningFragment: FC = () => {
           경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중
           음주는 기형아 출생 위험을 높입니다.
           <br />
-          <span style={{ color: "#fff", backgroundColor: "#000" }}>
+          <span style={{ color: "rgb(255, 255, 255)", backgroundColor: "rgb(0, 0, 0)" }}>
             19세 미만 청소년에게 판매금지
           </span>
           &nbsp;부정 불량 식품은 국번없이 1399

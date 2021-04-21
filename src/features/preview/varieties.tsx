@@ -15,15 +15,12 @@ const VarietiesFragment = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "#f1f1f1",
+        backgroundColor: "rgb(241, 241, 241)",
       }}
     >
       <article
         style={{
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "2.5rem",
-          paddingBottom: "2.5rem",
+          padding: "1.8rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}
@@ -31,8 +28,8 @@ const VarietiesFragment = () => {
         <h4
           style={{
             fontWeight: "bold",
-            color: "#282828",
-            fontSize: "1.5rem",
+            color: "rgb(40, 40, 40)",
+            fontSize: "18px",
             lineHeight: "2rem",
           }}
         >
@@ -40,15 +37,15 @@ const VarietiesFragment = () => {
         </h4>
         <h6
           style={{
-            color: "#282828",
-            marginTop: "8px",
-            fontSize: "1.25rem",
-            lineHeight: "1.75rem",
+            color: "rgb(40, 40, 40)",
+            marginTop: "5px",
+            fontSize: "15px",
+            lineHeight: "0.2rem",
           }}
         >
           {subtitle}
         </h6>
-        <p style={{ fontSize: "1rem", marginTop: "30px", lineHeight: 1.5 }}>
+        <p style={{ fontSize: "13px", marginTop: "20px", lineHeight: 1.5 }}>
           {description}
         </p>
       </article>

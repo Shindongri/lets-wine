@@ -25,10 +25,7 @@ const IndicationFragment = () => {
       <div
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "1.25rem",
-          paddingBottom: "1.25rem",
+          padding: "1.25rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}

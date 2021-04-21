@@ -23,10 +23,7 @@ const PairingFragment = () => {
       <article
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "2.5rem",
-          paddingBottom: "2.5rem",
+          padding: "2rem 1rem",
           maxWidth: "640px",
           display: "flex",
           flexDirection: "column",
@@ -35,22 +32,22 @@ const PairingFragment = () => {
       >
         <h4
           style={{
-            color: "#282828",
-            fontSize: "1.5rem",
-            lineHeight: "2rem",
+            color: "rgb(40, 40, 40)",
+            fontSize: "18px",
+            lineHeight: "1.2rem",
             fontWeight: "bold",
           }}
         >
           {title}
         </h4>
-        <div style={{ width: "1px", display: "block", height: "8px" }} />
+        <div style={{ width: "1px", display: "block", height: "10px" }} />
         {subtitle && (
           <>
             <h6
               style={{
-                fontSize: "1.5rem",
-                lineHeight: "2rem",
-                color: "#282828",
+                fontSize: "13px",
+                lineHeight: "0.4rem",
+                color: "rgb(77, 77, 77)",
               }}
             >
               {subtitle}
@@ -114,13 +111,13 @@ const PairingFragment = () => {
                   </div>
                 )}
                 <div
-                  style={{ width: "1px", display: "block", height: "18px" }}
+                  style={{ width: "1px", display: "block", height: "10px" }}
                 />
                 <h6
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "13px",
                     lineHeight: "1rem",
-                    color: "#282828",
+                    color: "rgb(40, 40, 40)",
                   }}
                 >
                   {content.title}
@@ -130,9 +127,9 @@ const PairingFragment = () => {
                 />
                 <h6
                   style={{
-                    color: "#4d4d4d",
-                    fontSize: "1rem",
-                    lineHeight: ".75rem",
+                    color: "rgb(77, 77, 77)",
+                    fontSize: "12px",
+                    lineHeight: ".4rem",
                   }}
                 >
                   {content.subtitle}

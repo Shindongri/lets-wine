@@ -8,16 +8,13 @@ const SmartOrderFragment: FC = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        background: "#f1f1f1",
+        background: "rgb(241, 241, 241)",
       }}
     >
       <article
         style={{
           width: "100%",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "2.5rem",
-          paddingBottom: "2.5rem",
+          padding: "1.8rem 1rem",
           maxWidth: "640px",
           boxSizing: "border-box",
         }}
@@ -27,7 +24,7 @@ const SmartOrderFragment: FC = () => {
             style={{
               textAlign: "center",
               fontWeight: "bold",
-              fontSize: "1.125rem",
+              fontSize: "15px",
               lineHeight: "1.75rem",
             }}
           >
@@ -37,17 +34,21 @@ const SmartOrderFragment: FC = () => {
             style={{
               borderRadius: "0.375rem",
               padding: "1.25rem",
-              backgroundColor: "#f9f9f9",
+              backgroundColor: "rgb(249, 249, 249)",
               marginTop: "16px",
             }}
           >
-            <p style={{ fontWeight: 600 }}>1. 미성년자 구매 불가</p>
+            <p style={{ fontWeight: 600, fontSize: "16px" }}>
+              1. 미성년자 구매 불가
+            </p>
             <ul
               style={{
-                color: "#6B7280",
-                listStyleType: '"*"',
+                color: "rgb(107, 114, 128)",
+                listStyleType: '"·"',
                 marginTop: "8px",
-                lineHeight: "1.75rem",
+                lineHeight: "1rem",
+                fontSize: "12px",
+                marginLeft: "14px",
               }}
             >
               <li>
@@ -60,10 +61,12 @@ const SmartOrderFragment: FC = () => {
             </p>
             <ul
               style={{
-                color: "#6B7280",
-                listStyleType: '"*"',
+                color: "rgb(107, 114, 128)",
+                listStyleType: '"·"',
                 marginTop: "8px",
-                lineHeight: "1.75rem",
+                lineHeight: "1rem",
+                fontSize: "12px",
+                marginLeft: "14px",
               }}
             >
               <li>
@@ -73,7 +76,7 @@ const SmartOrderFragment: FC = () => {
               </li>
               <li>
                 상품 픽업 시,
-                <span style={{ color: "#DC2626" }}>
+                <span style={{ color: "rgb(220, 38, 38)" }}>
                   본인인증 확인을 위해 ‘신분증’을 지참
                 </span>
                 하여 주시기 바랍니다. (주민등록증, 운전면허증, 여권만 허용)
@@ -84,10 +87,12 @@ const SmartOrderFragment: FC = () => {
             </p>
             <ul
               style={{
-                color: "#6B7280",
-                listStyleType: '"*"',
+                color: "rgb(107, 114, 128)",
+                listStyleType: '"·"',
                 marginTop: "8px",
-                lineHeight: "1.75rem",
+                lineHeight: "1rem",
+                fontSize: "12px",
+                marginLeft: "14px",
               }}
             >
               <li>
@@ -100,10 +105,12 @@ const SmartOrderFragment: FC = () => {
             </p>
             <ul
               style={{
-                color: "#6B7280",
-                listStyleType: '"*"',
+                color: "rgb(107, 114, 128)",
+                listStyleType: '"·"',
                 marginTop: "8px",
-                lineHeight: "1.75rem",
+                lineHeight: "1rem",
+                fontSize: "12px",
+                marginLeft: "14px",
               }}
             >
               <li>
