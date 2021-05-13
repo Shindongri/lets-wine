@@ -1,9 +1,9 @@
-import { FC, lazy, Fragment, Suspense } from "react";
-import { useSelector } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
+import {FC, Fragment, lazy, Suspense} from "react";
+import {useSelector} from "react-redux";
+import {makeStyles} from "@material-ui/core/styles";
 
-import { AVAILABLE_MENU_LIST } from "src/types";
-import { RootState } from "src/features";
+import {AVAILABLE_MENU_LIST} from "src/types";
+import {RootState} from "src/features";
 
 const Main = lazy(() => import("src/features/preview/main"));
 const Varieties = lazy(() => import("src/features/preview/varieties"));
@@ -18,6 +18,7 @@ const BrandShopTop = lazy(() => import("src/features/preview/brandShopTop"));
 const BrandShopBottom = lazy(
   () => import("src/features/preview/brandShopBottom")
 );
+const Pickup = lazy(() => import('src/features/preview/pickup'));
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -59,6 +60,8 @@ const Preview: FC = () => {
         return <BrandShopTop />;
       case AVAILABLE_MENU_LIST.BRAND_SHOP_BOTTOM:
         return <BrandShopBottom />;
+      case AVAILABLE_MENU_LIST.PICKUP:
+        return <Pickup />
       default:
         return null;
     }
