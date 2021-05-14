@@ -54,7 +54,7 @@ const PickupFragment: FC = () => {
         <Step
           imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine03_1.svg"
           title="당일 상품 픽업"
-          subtitle={`서울/경기/인천\n지역에 한함\n외 지역은 +1일 소요`}
+          subtitle={`서울/경기/인천 지역에 한함\n외 지역은 +1일 소요`}
         />
       </div>
     </div>
