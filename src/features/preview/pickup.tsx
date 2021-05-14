@@ -4,9 +4,10 @@ interface StepProps {
   imageUrl: string;
   title: string;
   subtitle: string;
+  width?: number;
 }
 
-const Step: FC<StepProps> = ({ imageUrl, title, subtitle }) => {
+const Step: FC<StepProps> = ({ imageUrl, title, subtitle, width }) => {
   return (
     <div
       style={{
@@ -14,7 +15,7 @@ const Step: FC<StepProps> = ({ imageUrl, title, subtitle }) => {
         flexDirection: "column",
         alignItems: "center",
         width: "fit-content",
-        minWidth: "80px",
+        minWidth: `${width ? width : 80}px`,
         height: "100%",
       }}
     >
@@ -38,20 +39,18 @@ const Step: FC<StepProps> = ({ imageUrl, title, subtitle }) => {
       >
         {title}
       </h6>
-      {subtitle.split("\n").map((s, i) => (
-        <p
+      <p
           style={{
             fontSize: "10px",
-            padding:  i === 0 ? "4px 0 0 0" : 0,
+            padding:  "4px 0 0 0",
             margin: 0,
             lineHeight: 1.5,
-            whiteSpace: "nowrap",
+            whiteSpace: "pre-line",
             textAlign: "center",
           }}
-        >
-          {s}
-        </p>
-      ))}
+      >
+        {subtitle}
+      </p>
     </div>
   );
 };
@@ -91,17 +90,18 @@ const PickupFragment: FC = () => {
           title="평일 오전 10시"
           subtitle="이전까지 결제 완료"
         />
-        <p style={{ fontSize: "20px", padding: "0 4px" }}>&gt;</p>
+        <p style={{ fontSize: "20px", padding: "0 10px" }}>&gt;</p>
         <Step
           imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine04_1.svg"
           title="[배송 완료]"
           subtitle={`알림 톡 수신후\n매장 방문하기`}
         />
-        <p style={{ fontSize: "20px", padding: "0 4px" }}>&gt;</p>
+        <p style={{ fontSize: "20px", padding: "0 10px" }}>&gt;</p>
         <Step
           imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine03_1.svg"
           title="당일 상품 픽업"
           subtitle={`서울/경기/인천 지역에 한함\n외 지역은 +1일 소요`}
+          width={120}
         />
       </div>
     </div>
