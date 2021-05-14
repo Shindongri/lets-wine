@@ -9,7 +9,7 @@ interface StepProps {
 const Step: FC<StepProps> = ({ imageUrl, title, subtitle }) => {
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "fit-content", height: "100%" }}
+      style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "fit-content", minWidth: "80px", height: "100%" }}
     >
       <div style={{ width: "auto", minWidth: "45px", height: "60px", objectFit: "contain" }}>
         <img src={imageUrl} alt="" />
@@ -29,7 +29,7 @@ const PickupFragment: FC = () => {
     <div
       style={{
         width: "100%",
-        height: "215px",
+        height: "248px",
         backgroundColor: "#cddf74",
         padding: "30px 1.5rem",
         boxSizing: "border-box"
@@ -38,23 +38,23 @@ const PickupFragment: FC = () => {
       <h2 style={{ fontSize: "18px", fontWeight: "bold", margin: "0px", paddingBottom: "18px" }}>
         렛츠와인 페어링 픽업 안내
       </h2>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", height: "fit-content" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%" }}>
         <Step
           imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine02.svg"
           title="평일 오전 10시"
           subtitle="이전까지 결제 완료"
         />
-        <p style={{ fontSize: "20px", padding: "0 16px" }}>&gt;</p>
+        <p style={{ fontSize: "20px", padding: "0 4px" }}>&gt;</p>
         <Step
           imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine04_1.svg"
           title="[배송 완료]"
           subtitle={`알림 톡 수신후\n매장 방문하기`}
         />
-        <p style={{ fontSize: "20px", padding: "0 16px" }}>&gt;</p>
+        <p style={{ fontSize: "20px", padding: "0 4px" }}>&gt;</p>
         <Step
           imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine03_1.svg"
           title="당일 상품 픽업"
-          subtitle={`서울/경기/인천 지역에 한함\n외 지역은 +1일 소요`}
+          subtitle={`서울/경기/인천\n지역에 한함\n외 지역은 +1일 소요`}
         />
       </div>
     </div>
