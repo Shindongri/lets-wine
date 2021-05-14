@@ -1,67 +1,12 @@
 import { FC } from "react";
 
-interface StepProps {
-  imageUrl: string;
-  title: string;
-  subtitle: string;
-  width?: number;
-}
-
-const Step: FC<StepProps> = ({ imageUrl, title, subtitle, width }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "fit-content",
-        minWidth: `${width ? width : 80}px`,
-        height: "100%",
-      }}
-    >
-      <div
-        style={{
-          width: "auto",
-          minWidth: "45px",
-          height: "60px",
-          objectFit: "contain",
-        }}
-      >
-        <img src={imageUrl} alt="" />
-      </div>
-      <h6
-        style={{
-          fontSize: "10px",
-          fontWeight: "bold",
-          padding: 0,
-          marginTop: "16px",
-        }}
-      >
-        {title}
-      </h6>
-      <p
-          style={{
-            fontSize: "10px",
-            padding:  "4px 0 0 0",
-            margin: 0,
-            lineHeight: 1.5,
-            whiteSpace: "pre-line",
-            textAlign: "center",
-          }}
-      >
-        {subtitle}
-      </p>
-    </div>
-  );
-};
-
 const PickupFragment: FC = () => {
   return (
     <div
       style={{
         width: "100%",
-        height: "248px",
-        backgroundColor: "#cddf74",
+        height: "215px",
+        backgroundColor: "rgb(205, 223, 116)",
         padding: "30px 1.5rem",
         boxSizing: "border-box",
       }}
@@ -85,24 +30,137 @@ const PickupFragment: FC = () => {
           height: "100%",
         }}
       >
-        <Step
-          imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine02.svg"
-          title="평일 오전 10시"
-          subtitle="이전까지 결제 완료"
-        />
-        <p style={{ fontSize: "20px", padding: "0 10px" }}>&gt;</p>
-        <Step
-          imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine04_1.svg"
-          title="[배송 완료]"
-          subtitle={`알림 톡 수신후\n매장 방문하기`}
-        />
-        <p style={{ fontSize: "20px", padding: "0 10px" }}>&gt;</p>
-        <Step
-          imageUrl="http://wineplz.cafe24.com/web/upload/img/icon_wine03_1.svg"
-          title="당일 상품 픽업"
-          subtitle={`서울/경기/인천 지역에 한함\n외 지역은 +1일 소요`}
-          width={120}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "fit-content",
+            minWidth: "80px",
+            height: "100%",
+          }}
+        >
+          <div
+            style={{
+              width: "auto",
+              minWidth: "45px",
+              height: "60px",
+              objectFit: "contain",
+            }}
+          >
+            <img alt="" src="/web/upload/img/icon_wine02.svg" />
+          </div>
+          <h6
+            style={{
+              fontSize: "10px",
+              fontWeight: "bold",
+              padding: "0px",
+              marginTop: "16px",
+            }}
+          >
+            평일 오전 10시
+          </h6>
+          <p
+            style={{
+              fontSize: "10px",
+              padding: "4px 0px 0px",
+              margin: "0px",
+              lineHeight: "1.5",
+              whiteSpace: "pre-line",
+              textAlign: "center",
+            }}
+          >
+            이전까지 결제 완료
+          </p>
+        </div>
+        <p style={{ fontSize: "20px", padding: "0px 10px" }}>&gt;</p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "fit-content",
+            minWidth: "100px",
+            height: "100%",
+          }}
+        >
+          <div
+            style={{
+              width: "auto",
+              minWidth: "45px",
+              height: "60px",
+              objectFit: "contain",
+            }}
+          >
+            <img alt="" src="/web/upload/img/icon_wine04_1.svg" />
+          </div>
+          <h6
+            style={{
+              fontSize: "10px",
+              fontWeight: "bold",
+              padding: "0px",
+              marginTop: "16px",
+            }}
+          >
+            [배송 완료]
+          </h6>
+          <p
+            style={{
+              fontSize: "10px",
+              padding: "4px 0px 0px",
+              margin: "0px",
+              lineHeight: "1.5",
+              whiteSpace: "pre-line",
+              textAlign: "center",
+            }}
+          >
+            알림 톡 수신후 매장 방문하기
+          </p>
+        </div>
+        <p style={{ fontSize: "20px", padding: "0px" }}>&gt;</p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "fit-content",
+            minWidth: "120px",
+            height: "100%",
+          }}
+        >
+          <div
+            style={{
+              width: "auto",
+              minWidth: "45px",
+              height: "60px",
+              objectFit: "contain",
+            }}
+          >
+            <img alt="" src="/web/upload/img/icon_wine03_1.svg" />
+          </div>
+          <h6
+            style={{
+              fontSize: "10px",
+              fontWeight: "bold",
+              padding: "0px",
+              marginTop: "16px",
+            }}
+          >
+            당일 상품 픽업
+          </h6>
+          <p
+            style={{
+              fontSize: "10px",
+              padding: "4px 0px 0px",
+              margin: "0px",
+              lineHeight: "1.5",
+              whiteSpace: "pre-line",
+              textAlign: "center",
+            }}
+          >
+            서울/경기/인천 지역에 한함 외 지역은 +1일 소요
+          </p>
+        </div>
       </div>
     </div>
   );

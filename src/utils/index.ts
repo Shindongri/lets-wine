@@ -2,6 +2,8 @@ import { AVAILABLE_MENU_LIST } from "../types";
 
 export const mapMenuValueToMenuLabel = (type: AVAILABLE_MENU_LIST) => {
   switch (type) {
+    case AVAILABLE_MENU_LIST.PICKUP:
+      return "픽업";
     case AVAILABLE_MENU_LIST.MAIN:
       return "메인";
     case AVAILABLE_MENU_LIST.VARIETIES:
@@ -24,8 +26,6 @@ export const mapMenuValueToMenuLabel = (type: AVAILABLE_MENU_LIST) => {
       return "브랜드샵(TOP)";
     case AVAILABLE_MENU_LIST.BRAND_SHOP_BOTTOM:
       return "브랜드샵(BOTTOM)";
-    case AVAILABLE_MENU_LIST.PICKUP:
-      return "픽업";
   }
 };
 
