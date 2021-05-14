@@ -48,7 +48,7 @@ const PickupFragment: FC = () => {
               objectFit: "contain",
             }}
           >
-            <img alt="" src="/web/upload/img/icon_wine02.svg" />
+            <img alt="" src="http://wineplz.cafe24.com/web/upload/img/icon_wine02.svg" />
           </div>
           <h6
             style={{
@@ -92,7 +92,7 @@ const PickupFragment: FC = () => {
               objectFit: "contain",
             }}
           >
-            <img alt="" src="/web/upload/img/icon_wine04_1.svg" />
+            <img alt="" src="http://wineplz.cafe24.com/web/upload/img/icon_wine04_1.svg" />
           </div>
           <h6
             style={{
@@ -136,7 +136,7 @@ const PickupFragment: FC = () => {
               objectFit: "contain",
             }}
           >
-            <img alt="" src="/web/upload/img/icon_wine03_1.svg" />
+            <img alt="" src="http://wineplz.cafe24.com/web/upload/img/icon_wine03_1.svg" />
           </div>
           <h6
             style={{
