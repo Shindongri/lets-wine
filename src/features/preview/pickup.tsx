@@ -12,7 +12,7 @@ const Step: FC<StepProps> = ({ imageUrl, title, subtitle }) => {
       style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "fit-content", height: "100%" }}
     >
       <div style={{ width: "auto", minWidth: "45px", height: "60px", objectFit: "contain" }}>
-        <img src={imageUrl} />
+        <img src={imageUrl} alt="" />
       </div>
       <h6
         style={{ fontSize: "10px", fontWeight: "bold", padding: 0, marginTop: "16px" }}
