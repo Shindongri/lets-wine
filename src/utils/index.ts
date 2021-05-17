@@ -6,6 +6,12 @@ export const mapMenuValueToMenuLabel = (type: AVAILABLE_MENU_LIST) => {
       return "픽업";
     case AVAILABLE_MENU_LIST.MAIN:
       return "메인";
+    case AVAILABLE_MENU_LIST.UNTITLED_1:
+      return "가로 띠배너1";
+    case AVAILABLE_MENU_LIST.UNTITLED_2:
+      return "가로 띠배너2";
+    case AVAILABLE_MENU_LIST.UNTITLED_3:
+      return "가로 띠배너3";
     case AVAILABLE_MENU_LIST.VARIETIES:
       return "품종";
     case AVAILABLE_MENU_LIST.PAIRING:

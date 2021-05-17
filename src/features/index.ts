@@ -9,6 +9,7 @@ import scentSlice from "./form/scent/scentSlice";
 import brandShopTopSlice from "./form/brandShopTop/brandShopTopSlice";
 import brandShopBottomSlice from "./form/brandShopBottom/brandShopBottomSlice";
 import appSlice from "./app/appSlice";
+import untitledSlice from "./form/untitled/untitledSlice";
 
 /* Root Reducer */
 const rootReducer = combineReducers({
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   brandShopTopSlice,
   brandShopBottomSlice,
   appSlice,
+  untitledSlice,
 });
 
 export default rootReducer;

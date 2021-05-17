@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Main = lazy(() => import("src/features/form/main"));
+const Untitled1 = lazy(() => import("src/features/form/untitled"));
+const Untitled2 = lazy(() => import("src/features/form/untitled"));
+const Untitled3 = lazy(() => import("src/features/form/untitled"));
 const Pairing = lazy(() => import("src/features/form/pairing"));
 const Varieties = lazy(() => import("src/features/form/varieties"));
 const DrinkingGuide = lazy(() => import("src/features/form/drinkingGuide"));
@@ -70,6 +73,9 @@ const Form: FC = () => {
             <Suspense fallback={() => <div>Loading...</div>}>
               {type === AVAILABLE_MENU_LIST.MAIN && <Main />}
               {type === AVAILABLE_MENU_LIST.PAIRING && <Pairing />}
+              {type === AVAILABLE_MENU_LIST.UNTITLED_1 && <Untitled1 order={1} />}
+              {type === AVAILABLE_MENU_LIST.UNTITLED_2 && <Untitled2 order={2} />}
+              {type === AVAILABLE_MENU_LIST.UNTITLED_3 && <Untitled3 order={3} />}
               {type === AVAILABLE_MENU_LIST.SCENT && <Scent />}
               {type === AVAILABLE_MENU_LIST.VARIETIES && <Varieties />}
               {type === AVAILABLE_MENU_LIST.DRINKING_GUIDE && <DrinkingGuide />}

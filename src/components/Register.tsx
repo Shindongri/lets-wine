@@ -114,6 +114,7 @@ const Register: FC = () => {
   const remove = () => {
     try {
       localStorage.removeItem("persist:lets-wine");
+      setTimeout(() => window.location.reload(), 300);
     } catch (e) {}
   };
 
