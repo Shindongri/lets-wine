@@ -22,6 +22,7 @@ import {
   setImageUrl,
   setContentLabel,
   setContentValue,
+  setWarning,
   addContent,
   removeContent,
 } from "./indicationSlice";
@@ -40,15 +41,21 @@ const useStyles = makeStyles((theme) => ({
 const Indication: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { imageUrl, title, subtitle, description, contents } = useSelector(
-    (state: RootState) => ({
-      imageUrl: state.indicationSlice.image_url,
-      title: state.indicationSlice.title,
-      subtitle: state.indicationSlice.subtitle,
-      description: state.indicationSlice.description,
-      contents: state.indicationSlice.contents,
-    })
-  );
+  const {
+    imageUrl,
+    title,
+    subtitle,
+    description,
+    warning,
+    contents,
+  } = useSelector((state: RootState) => ({
+    imageUrl: state.indicationSlice.image_url,
+    title: state.indicationSlice.title,
+    subtitle: state.indicationSlice.subtitle,
+    description: state.indicationSlice.description,
+    warning: state.indicationSlice.warning,
+    contents: state.indicationSlice.contents,
+  }));
 
   const [isImage, setIsImage] = useState<boolean>(!!imageUrl);
 
@@ -207,6 +214,17 @@ const Indication: FC = () => {
           </Grid>
         </>
       )}
+      <Grid item xs={12}>
+        <FormControl className={classes.formControl}>
+          <TextField
+            label="함량 문구"
+            value={warning}
+            onChange={({ target: { value } }) =>
+              dispatch(setWarning(value as string))
+            }
+          />
+        </FormControl>
+      </Grid>
     </Grid>
   );
 };

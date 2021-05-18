@@ -75,6 +75,13 @@ const Register: FC = () => {
   const [type, setType] = useState<AVAILABLE_MENU_LIST | null>(
     AVAILABLE_MENU_LIST.MAIN
   );
+  const [selectedType, setSelectedType] = useState<AVAILABLE_MENU_LIST | null>(
+    null
+  );
+
+  const handleSelect = (t: AVAILABLE_MENU_LIST) => {
+    setSelectedType(t);
+  };
 
   const handleChange = ({
     target: { value },
@@ -117,6 +124,8 @@ const Register: FC = () => {
       setTimeout(() => window.location.reload(), 300);
     } catch (e) {}
   };
+
+  console.log(components);
 
   return (
     <Grid container alignItems="center" style={{ width: "100%" }}>
@@ -194,14 +203,20 @@ const Register: FC = () => {
         </Button>
       </Grid>
       <Spacer axis="vertical" size={24} />
-      {!!components?.length && <DraggableOrderList items={components} />}
-      <Grid item xs={12} style={{ marginTop: "24px" }}>
-        <Grid container>
-          <Grid item xs={12}>
-            <Form />
-          </Grid>
-        </Grid>
-      </Grid>
+      {components.length > 0 && (
+        <>
+          <DraggableOrderList items={components} onSelect={handleSelect} />
+          {components?.find((component) => component === selectedType) && (
+            <Grid item xs={12} style={{ marginTop: "24px" }}>
+              <Grid container>
+                <Grid item xs={12}>
+                  <Form selectedType={selectedType} />
+                </Grid>
+              </Grid>
+            </Grid>
+          )}
+        </>
+      )}
     </Grid>
   );
 };

@@ -3,15 +3,21 @@ import { useSelector } from "react-redux";
 import { RootState } from "src/features";
 
 const IndicationFragment = () => {
-  const { title, subtitle, description, contents, imageUrl } = useSelector(
-    (state: RootState) => ({
-      title: state.indicationSlice.title,
-      subtitle: state.indicationSlice.subtitle,
-      description: state.indicationSlice.description,
-      contents: state.indicationSlice.contents,
-      imageUrl: state.indicationSlice.image_url,
-    })
-  );
+  const {
+    title,
+    subtitle,
+    description,
+    contents,
+    imageUrl,
+    warning,
+  } = useSelector((state: RootState) => ({
+    title: state.indicationSlice.title,
+    subtitle: state.indicationSlice.subtitle,
+    description: state.indicationSlice.description,
+    contents: state.indicationSlice.contents,
+    imageUrl: state.indicationSlice.image_url,
+    warning: state.indicationSlice.warning,
+  }));
 
   return (
     <footer
@@ -99,6 +105,22 @@ const IndicationFragment = () => {
               ))}
             </dl>
           </>
+        )}
+        {warning && (
+          <div
+            style={{
+              width: "100%",
+              paddingTop: "4px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <small
+              style={{ fontSize: "0.75rem", lineHeight: "1rem", paddingTop: 0 }}
+            >
+              {warning}
+            </small>
+          </div>
         )}
       </div>
     </footer>

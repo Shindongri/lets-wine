@@ -1,15 +1,14 @@
-import { ChangeEvent, FC, lazy, Suspense, useState } from "react";
+import { FC, lazy, Suspense } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
   Divider,
   FormControl,
   Grid,
-  MenuItem,
   Container,
   Paper,
   InputLabel,
-  Select,
+  Typography,
 } from "@material-ui/core";
 
 import { AVAILABLE_MENU_LIST } from "src/types";
@@ -37,51 +36,52 @@ const Scent = lazy(() => import("src/features/form/scent"));
 const BrandShopTop = lazy(() => import("src/features/form/brandShopTop"));
 const BrandShopBottom = lazy(() => import("src/features/form/brandShopBottom"));
 
-const Form: FC = () => {
+const Form: FC<{ selectedType: AVAILABLE_MENU_LIST | null }> = ({
+  selectedType,
+}) => {
   const classes = useStyles();
-  const [type, setType] = useState<AVAILABLE_MENU_LIST>(
-    AVAILABLE_MENU_LIST.MAIN
-  );
-
-  const handleChange = ({
-    target: { value },
-  }: ChangeEvent<{ value: unknown }>) => setType(value as AVAILABLE_MENU_LIST);
 
   return (
     <Paper>
       <Container className={classes.root} fixed>
         <Grid container>
           <Grid item xs={12}>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="component-select">컴포넌트</InputLabel>
-              <Select
-                labelId="component-select-label"
-                id="component-select"
-                value={type}
-                onChange={handleChange}
-              >
-                {Object.values({ ...AVAILABLE_MENU_LIST }).map((menu) => (
-                  <MenuItem key={menu} value={menu}>
-                    {mapMenuValueToMenuLabel(menu)}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <Grid container xs={12}>
+              <Grid item xs={6}>
+                {selectedType && (
+                  <Typography variant="h6">
+                    {mapMenuValueToMenuLabel(selectedType)}
+                  </Typography>
+                )}
+              </Grid>
+            </Grid>
           </Grid>
           <Divider />
           <Grid item xs={12}>
             <Suspense fallback={() => <div>Loading...</div>}>
-              {type === AVAILABLE_MENU_LIST.MAIN && <Main />}
-              {type === AVAILABLE_MENU_LIST.PAIRING && <Pairing />}
-              {type === AVAILABLE_MENU_LIST.UNTITLED_1 && <Untitled1 order={1} />}
-              {type === AVAILABLE_MENU_LIST.UNTITLED_2 && <Untitled2 order={2} />}
-              {type === AVAILABLE_MENU_LIST.UNTITLED_3 && <Untitled3 order={3} />}
-              {type === AVAILABLE_MENU_LIST.SCENT && <Scent />}
-              {type === AVAILABLE_MENU_LIST.VARIETIES && <Varieties />}
-              {type === AVAILABLE_MENU_LIST.DRINKING_GUIDE && <DrinkingGuide />}
-              {type === AVAILABLE_MENU_LIST.INDICATION && <Indication />}
-              {type === AVAILABLE_MENU_LIST.BRAND_SHOP_TOP && <BrandShopTop />}
-              {type === AVAILABLE_MENU_LIST.BRAND_SHOP_BOTTOM && (
+              {selectedType === AVAILABLE_MENU_LIST.MAIN && <Main />}
+              {selectedType === AVAILABLE_MENU_LIST.PAIRING && <Pairing />}
+              {selectedType === AVAILABLE_MENU_LIST.UNTITLED_1 && (
+                <Untitled1 order={1} />
+              )}
+              {selectedType === AVAILABLE_MENU_LIST.UNTITLED_2 && (
+                <Untitled2 order={2} />
+              )}
+              {selectedType === AVAILABLE_MENU_LIST.UNTITLED_3 && (
+                <Untitled3 order={3} />
+              )}
+              {selectedType === AVAILABLE_MENU_LIST.SCENT && <Scent />}
+              {selectedType === AVAILABLE_MENU_LIST.VARIETIES && <Varieties />}
+              {selectedType === AVAILABLE_MENU_LIST.DRINKING_GUIDE && (
+                <DrinkingGuide />
+              )}
+              {selectedType === AVAILABLE_MENU_LIST.INDICATION && (
+                <Indication />
+              )}
+              {selectedType === AVAILABLE_MENU_LIST.BRAND_SHOP_TOP && (
+                <BrandShopTop />
+              )}
+              {selectedType === AVAILABLE_MENU_LIST.BRAND_SHOP_BOTTOM && (
                 <BrandShopBottom />
               )}
             </Suspense>

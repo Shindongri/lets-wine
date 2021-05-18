@@ -5,6 +5,7 @@ interface IndicationSliceState {
   title: string;
   subtitle: string;
   description: string;
+  warning: string;
   contents: Array<{ key: number; label: string; value: string }>;
 }
 
@@ -13,6 +14,7 @@ const initialState = {
   title: "",
   subtitle: "",
   description: "식품위생법 및 주세법에 의한 한글표시사항",
+  warning: "*생산연도에 따라 알코올 도수에 차이가 있을 수 있으니 정확한 함량은 라벨을 참고해 주세요.",
   contents: [
     {
       key: 0,
@@ -96,6 +98,9 @@ const indicationSlice = createSlice({
 
       state.contents[key].value = value;
     },
+    setWarning(state, action) {
+      state.warning = action.payload;
+    },
     addContent(
       state,
       action: PayloadAction<{ key: number; label: string; value: string }>
@@ -114,6 +119,7 @@ export const {
   setTitle,
   setSubtitle,
   setDescription,
+  setWarning,
   setImageUrl,
   setContentLabel,
   setContentValue,

@@ -27,6 +27,7 @@ import { mapMenuValueToMenuLabel } from "../utils";
 
 interface Props {
   items: Array<AVAILABLE_MENU_LIST>;
+  onSelect: (item: AVAILABLE_MENU_LIST) => void;
 }
 
 const reorder = (
@@ -55,7 +56,7 @@ const getListStyle = (isDraggingOver: boolean) => ({
   background: isDraggingOver ? "lightgray" : "#fff",
 });
 
-const DraggableOrderList: FC<Props> = ({ items }) => {
+const DraggableOrderList: FC<Props> = ({ items, onSelect }) => {
   const dispatch = useDispatch();
 
   const onDragEnd = (result: DropResult) => {
@@ -94,6 +95,7 @@ const DraggableOrderList: FC<Props> = ({ items }) => {
                           snapshot.isDragging,
                           provided?.draggableProps?.style
                         )}
+                        onClick={() => onSelect(item)}
                       >
                         <ListItemText primary={getListItemText(index, item)} />
                         <ListItemSecondaryAction>
