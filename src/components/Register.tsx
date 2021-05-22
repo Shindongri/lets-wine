@@ -125,8 +125,6 @@ const Register: FC = () => {
     } catch (e) {}
   };
 
-  console.log(components);
-
   return (
     <Grid container alignItems="center" style={{ width: "100%" }}>
       <Grid item xs={12}>

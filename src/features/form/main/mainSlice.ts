@@ -15,7 +15,23 @@ export interface MainSliceState {
 
 const initialState = {
   main_image_url: "",
-  contents: [],
+  contents: [
+    {
+      key: 0,
+      title: "",
+      description: "",
+    },
+    {
+      key: 1,
+      title: "",
+      description: "",
+    },
+    {
+      key: 2,
+      title: "",
+      description: "",
+    },
+  ],
 } as MainSliceState;
 
 const mainSlice = createSlice({

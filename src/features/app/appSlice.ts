@@ -8,7 +8,17 @@ export interface AppSliceState {
 }
 
 const initialState = {
-  components: [],
+  components: [
+    AVAILABLE_MENU_LIST.UNTITLED_1,
+    AVAILABLE_MENU_LIST.ADULT,
+    AVAILABLE_MENU_LIST.MAIN,
+    AVAILABLE_MENU_LIST.VARIETIES,
+    AVAILABLE_MENU_LIST.SCENT,
+    AVAILABLE_MENU_LIST.DRINKING_GUIDE,
+    AVAILABLE_MENU_LIST.INDICATION,
+    AVAILABLE_MENU_LIST.WARNING,
+    AVAILABLE_MENU_LIST.SMART_ORDER,
+  ],
   files: [],
   thumbnailList: [],
 } as AppSliceState;
