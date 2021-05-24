@@ -116,7 +116,7 @@ const IndicationFragment = () => {
             }}
           >
             <small
-              style={{ fontSize: "0.75rem", lineHeight: "1rem", paddingTop: 0 }}
+              style={{ fontSize: "0.75rem", lineHeight: "1rem", paddingTop: 0, whiteSpace: "pre-line" }}
             >
               {warning}
             </small>
