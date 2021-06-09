@@ -10,7 +10,7 @@ interface IndicationSliceState {
 }
 
 const initialState = {
-  image_url: "http://letswine.co.kr/web/upload/img/detail/2other/blank.png",
+  image_url: "https://letswine.co.kr/web/upload/img/detail/2other/blank.png",
   title: "",
   subtitle: "",
   description: "식품위생법 및 주세법에 의한 한글표시사항",

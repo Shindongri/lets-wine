@@ -58,7 +58,7 @@ const AdultFragment: FC = () => {
               width: "100%",
               height: "100%",
             }}
-            src="http://wineplz.cafe24.com/web/upload/img/pro_ok3.svg"
+            src="https://wineplz.cafe24.com/web/upload/img/pro_ok3.svg"
             alt=""
           />
         </div>
@@ -129,7 +129,7 @@ const AdultFragment: FC = () => {
               width: "100%",
               height: "100%",
             }}
-            src="http://wineplz.cafe24.com/web/upload/img/pro_go3.svg"
+            src="https://wineplz.cafe24.com/web/upload/img/pro_go3.svg"
             alt=""
           />
         </div>
@@ -155,7 +155,7 @@ const AdultFragment: FC = () => {
                 width: "100%",
                 height: "100%",
               }}
-              src="http://wineplz.cafe24.com/web/upload/img/19con.svg"
+              src="https://wineplz.cafe24.com/web/upload/img/19con.svg"
               alt=""
             />
           </div>

@@ -1,6 +1,6 @@
 {
   "main": {
-    "main_image_url": "http://wineplz.cafe24.com/web/upload/img/tussock001m.png",
+    "main_image_url": "https://wineplz.cafe24.com/web/upload/img/tussock001m.png",
     "shortcut": {
       "title": "브랜드샵 바로가기",
       "description": "브랜드샵 설명",
@@ -51,24 +51,24 @@
       {
         "title": "카페ㅊa",
         "subtitle": "달고나 캔",
-        "imageUrl": "http://wineplz.cafe24.com/web/upload/img/tussock_pair2m.png"
+        "imageUrl": "https://wineplz.cafe24.com/web/upload/img/tussock_pair2m.png"
       },
       {
         "title": "카페ㅊa",
         "subtitle": "달고나 마들렌",
-        "imageUrl": "http://wineplz.cafe24.com/web/upload/img/tussock_pair3m.png"
+        "imageUrl": "https://wineplz.cafe24.com/web/upload/img/tussock_pair3m.png"
       },
       {
         "title": "카페ㅊa",
         "subtitle": "달고나 선물포장",
-        "imageUrl": "http://wineplz.cafe24.com/web/upload/img/tussock_pair4m.png"
+        "imageUrl": "https://wineplz.cafe24.com/web/upload/img/tussock_pair4m.png"
       }
     ],
     "images": [
-      "http://wineplz.cafe24.com/web/upload/img/scent001.svg",
-      "http://wineplz.cafe24.com/web/upload/img/scent002.svg",
-      "http://wineplz.cafe24.com/web/upload/img/scent003.svg",
-      "http://wineplz.cafe24.com/web/upload/img/scent004.svg"
+      "https://wineplz.cafe24.com/web/upload/img/scent001.svg",
+      "https://wineplz.cafe24.com/web/upload/img/scent002.svg",
+      "https://wineplz.cafe24.com/web/upload/img/scent003.svg",
+      "https://wineplz.cafe24.com/web/upload/img/scent004.svg"
     ]
   },
   "varieties": {

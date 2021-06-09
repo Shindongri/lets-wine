@@ -65,7 +65,7 @@ const DrinkingGuideFragment = () => {
                 width: "100%",
                 height: "100%",
               }}
-              src={`http://wineplz.cafe24.com/web/upload/img/wineglass_${glass}s.svg`}
+              src={`https://wineplz.cafe24.com/web/upload/img/wineglass_${glass}s.svg`}
               alt=""
             />
           </div>
@@ -106,7 +106,7 @@ const DrinkingGuideFragment = () => {
                   width: "100%",
                   height: "100%",
                 }}
-                src={`http://wineplz.cafe24.com/web/upload/img/decanting${
+                src={`https://wineplz.cafe24.com/web/upload/img/decanting${
                   decanting ? 1 : 2
                 }s.svg`}
                 alt=""
@@ -142,7 +142,7 @@ const DrinkingGuideFragment = () => {
                   width: "100%",
                   height: "100%",
                 }}
-                src="http://wineplz.cafe24.com/web/upload/img/temp_s.svg"
+                src="https://wineplz.cafe24.com/web/upload/img/temp_s.svg"
                 alt=""
               />
             </div>
@@ -185,7 +185,7 @@ const DrinkingGuideFragment = () => {
                     width: "100%",
                     height: "100%",
                   }}
-                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${body}s.svg`}
+                  src={`https://wineplz.cafe24.com/web/upload/img/bar_${body}s.svg`}
                   alt=""
                 />
               </div>
@@ -220,7 +220,7 @@ const DrinkingGuideFragment = () => {
                     width: "100%",
                     height: "100%",
                   }}
-                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${acidic}s.svg`}
+                  src={`https://wineplz.cafe24.com/web/upload/img/bar_${acidic}s.svg`}
                   alt=""
                 />
               </div>
@@ -255,7 +255,7 @@ const DrinkingGuideFragment = () => {
                     width: "100%",
                     height: "100%",
                   }}
-                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${tannic}s.svg`}
+                  src={`https://wineplz.cafe24.com/web/upload/img/bar_${tannic}s.svg`}
                   alt=""
                 />
               </div>
@@ -290,7 +290,7 @@ const DrinkingGuideFragment = () => {
                     width: "100%",
                     height: "100%",
                   }}
-                  src={`http://wineplz.cafe24.com/web/upload/img/bar_${sweet}s.svg`}
+                  src={`https://wineplz.cafe24.com/web/upload/img/bar_${sweet}s.svg`}
                   alt=""
                 />
               </div>
