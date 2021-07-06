@@ -57,7 +57,7 @@ const MainFragment = () => {
                     wordBreak: "break-all",
                   }}
                 >
-                  {content.description.split("\\n").join("\n")}
+                  {content.description?.includes("\\n") ? content.description.split("\\n").join("\n") : content.description}
                   {content.image_url && (
                     <img
                       style={{ width: "100%" }}

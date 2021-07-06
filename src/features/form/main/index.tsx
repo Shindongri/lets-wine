@@ -5,6 +5,7 @@ import { AddCircle, Delete } from "@material-ui/icons";
 import {
   TextField,
   FormGroup,
+  TextareaAutosize,
   IconButton,
   FormControl,
   Grid,
@@ -134,11 +135,12 @@ const Main: FC = () => {
                   />
                 </FormControl>
                 <FormControl className={classes.formControl}>
-                  <TextField
-                    label="콘텐츠 설명"
+                  <TextareaAutosize
+                    aria-label="minimum height"
+                    rowsMin={6}
+                    placeholder="콘텐츠 설명"
                     value={content.description}
                     style={{ minWidth: "180px" }}
-                    variant="outlined"
                     onChange={({ target: { value } }) =>
                       dispatch(
                         setContentDescription({ key: idx, description: value })

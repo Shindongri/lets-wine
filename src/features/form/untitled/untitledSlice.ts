@@ -19,7 +19,7 @@ const initialState = {
   subtitle1: "",
   subtitle2: "",
   subtitle3: "",
-  imageUrl1: "",
+  imageUrl1: "//wineplz.cafe24.com/web/upload/img/pc_pickup.png",
   imageUrl2: "",
   imageUrl3: "",
 } as UntitledSliceState;
