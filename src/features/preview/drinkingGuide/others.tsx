@@ -189,24 +189,28 @@ const OthersDrinkingGuideFragment = () => {
                 >
                   {otherCharacteristicName}
                 </span>
-                <span style={{ width: "24px", height: "1px" }} />
-                <div
-                  style={{
-                    gridColumn: "span 5 / span 5",
-                    height: "1.25rem",
-                    width: "70%",
-                  }}
-                >
-                  <img
-                    style={{
-                      objectFit: "contain",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    src={`https://wineplz.cafe24.com/web/upload/img/bar_${otherCharacteristic}s.svg`}
-                    alt=""
-                  />
-                </div>
+                {otherCharacteristic && (
+                  <>
+                    <span style={{ width: "24px", height: "1px" }} />
+                    <div
+                      style={{
+                        gridColumn: "span 5 / span 5",
+                        height: "1.25rem",
+                        width: "70%",
+                      }}
+                    >
+                      <img
+                        style={{
+                          objectFit: "contain",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        src={`https://wineplz.cafe24.com/web/upload/img/bar_${otherCharacteristic}s.svg`}
+                        alt=""
+                      />
+                    </div>
+                  </>
+                )}
               </li>
             </ul>
           )}
