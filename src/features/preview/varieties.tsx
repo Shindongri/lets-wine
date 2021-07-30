@@ -30,7 +30,7 @@ const VarietiesFragment = () => {
             fontWeight: "bold",
             color: "rgb(40, 40, 40)",
             fontSize: "18px",
-            lineHeight: "2rem",
+            lineHeight: 1.2,
           }}
         >
           {title}
@@ -38,9 +38,9 @@ const VarietiesFragment = () => {
         <h6
           style={{
             color: "rgb(40, 40, 40)",
-            marginTop: "5px",
+            marginTop: "10px",
             fontSize: "15px",
-            lineHeight: "0.2rem",
+            lineHeight: 1.2,
           }}
         >
           {subtitle}
