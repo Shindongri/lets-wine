@@ -60,7 +60,7 @@ const MainFragment = () => {
                   {content.description?.includes("\\n") ? content.description.split("\\n").join("\n") : content.description}
                   {content.image_url && (
                     <img
-                      style={{ width: "100%" }}
+                      style={{ width: "100%", marginTop: "12px" }}
                       src={content.image_url}
                       alt=""
                     />
@@ -72,6 +72,7 @@ const MainFragment = () => {
                         padding: "30px 0 56.25% 0",
                         height: 0,
                         overflow: "hidden",
+                        marginTop: "12px"
                       }}
                     >
                       <iframe
